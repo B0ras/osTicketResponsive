@@ -1,0 +1,1 @@
+php manage.php deploy --setup C:\xampp\htdocs\osticket\

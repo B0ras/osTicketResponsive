@@ -2,7 +2,7 @@
 if(!defined('SETUPINC')) die('Kwaheri!');
 ?>
     <div id="main">
-            <h1 style="color:#FF7700;"><?php echo __('Configuration file missing!');?></h1>
+            <h1 style="color:#522a07;"><?php echo __('Configuration file missing');?></h1>
             <div id="intro">
              <p><?php echo __('osTicket installer requires ability to write to the configuration file, <b>include/ost-config.php</b>. A template copy is located in the include directory (<b>include/ost-sampleconfig.php</b>).');?>
              </p>
