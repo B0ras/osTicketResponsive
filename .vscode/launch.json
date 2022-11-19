@@ -16,9 +16,14 @@
             "request": "launch",
             "program": "${workspaceFolder}/manage.php",
             "port": 9003,
-            "args": [
-                "deploy", "--setup", "/var/www/htdocs/osticket/"
-            ]
+            "args": ["deploy", "--setup", "/var/www/htdocs/osticket/"]
+        },
+        {
+            "name": "Deploy to Apache",
+            "type": "php",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.php",
+            "args": ["deploy", "--setup", "C:\\xampp\\htdocs\\osticket\\"]
         },
         {
             "name": "Launch currently open script",
@@ -27,9 +32,7 @@
             "program": "${file}",
             "cwd": "${fileDirname}",
             "port": 0,
-            "runtimeArgs": [
-                "-dxdebug.start_with_request=yes"
-            ],
+            "runtimeArgs": ["-dxdebug.start_with_request=yes"],
             "env": {
                 "XDEBUG_MODE": "debug,develop",
                 "XDEBUG_CONFIG": "client_port=${port}"

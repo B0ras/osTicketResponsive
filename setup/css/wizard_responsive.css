@@ -1,0 +1,53 @@
+:root{
+    --sm-screen: 575.98px
+    --sm-screen: 767.98px
+    --sm-screen: 991.98px
+    --sm-screen: 1199.98px
+    --sm-screen: 1399.98px
+}
+@media (max-width: 575.97px) {
+    div#wizard {
+        background-color: green;
+        max-width: 90%;
+        overflow-wrap: inherit;
+    }
+}
+
+@media (min-width: 575.98px) {
+    div#wizard {
+        background-color: yellow;
+        max-width: 540px
+    }
+}
+
+@media (min-width: 767.98px){
+    div#wizard {
+        background-color: blue;
+        max-width: 720px
+    }
+
+}
+
+@media (min-width: 991.98px){
+    div#wizard {
+        background-color: bisque;
+        max-width: 720px
+    }
+
+}
+
+@media (min-width: 1199.98px){
+    div#wizard {
+        background-color: blueviolet;
+        max-width: 960px
+    }
+
+}
+
+@media (min-width: 1399.98px){
+    div#wizard {
+        background-color: brown;
+        max-width: 1140px
+    }
+
+}
