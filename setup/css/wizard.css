@@ -14,7 +14,7 @@ body {
 
 #wizard {
     background: #fff;
-    width: 800px;
+    width: auto;
     margin: 30px auto;
     padding: 10px;
     border: 1px solid #2a67ac;
@@ -111,7 +111,7 @@ a {
 }
 
 #main {
-    width: 580px;
+    width: min-content;
     float: left;
 }
 #main h1 {
