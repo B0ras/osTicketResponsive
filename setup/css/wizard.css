@@ -121,7 +121,7 @@ a {
     font-weight: normal;
 }
 #main h2 {
-    font-size: 15pt;
+    /* font-size: 15pt; */
     margin: 0;
     padding: 0;
 }
