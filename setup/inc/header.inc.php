@@ -3,12 +3,11 @@ if ($cfg)
     header("Content-Security-Policy: frame-ancestors " . $cfg->getAllowIframes() . ";");
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html <?php if (
-    ($lang=Internationalization::getCurrentLanguage()) &&
-    ($info=Internationalization::getLanguageInfo($lang)) && (@$info['direction']=='rtl')
-) echo 'dir="rtl" class="rtl"';
-    // Dropped IE Support Warning if (osTicket::is_ie()) $warning=__('osTicket no longer supports Internet Explorer.');
-    ?>>
+<html <?php if ( ($lang = Internationalization::getCurrentLanguage()) &&
+    ($info = Internationalization::getLanguageInfo($lang)) && (@$info['direction'] == 'rtl') )
+    echo 'dir="rtl" class="rtl"';
+// Dropped IE Support Warning if (osTicket::is_ie()) $warning=__('osTicket no longer supports Internet Explorer.');
+?>>
 
 <head>
     <title>
@@ -26,7 +25,7 @@ if ($cfg)
 </head>
 
 <body class="">
-    <div id="wizard" class="container-fluid col-sm1">
+    <div id="wizard" class="container-fluid">
         <?php if ($warning)
             echo sprintf('<div class="warning_bar">%s</div>', $warning); ?>
         <div id="header" class="row">
