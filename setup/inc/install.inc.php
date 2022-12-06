@@ -102,7 +102,7 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
             <label>
                 <?php echo __('Email Address'); ?>:
             </label>
-            <input class="form-control" type="text" name="admin_email" size="45" tabindex="5"
+            <input class="form-control" type="email" name="admin_email" size="45" tabindex="5"
                 value="<?php echo $info['admin_email']; ?>">
             <a class="tip" href="#email"><i class="icon-question-sign help-tip"></i></a>
             <font class="error">
