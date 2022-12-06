@@ -7183,19 +7183,16 @@ body div#wizard #content #main #bar input[type=submit] {
 body div#wizard #content #main #install {
   width: 100%;
 }
-body div#wizard #content #main #install .row {
-  margin-top: 10px;
-}
-body div#wizard #content #main #install .row input[type=text],
-body div#wizard #content #main #install .row input[type=password],
-body div#wizard #content #main #install .row select {
+body div#wizard #content #main #install div.form-floating {
+  margin-top: 20px;
   width: 80%;
-  margin: 0 15% 0 5%;
+  border-color: rgb(95, 95, 95);
 }
-body div#wizard #content #main #install .row label {
-  margin-bottom: 5px;
-  margin-left: 5%;
-  padding: 0;
+body div#wizard #content #main #install label {
+  color: grey;
+}
+body div#wizard #content #main #install h4 {
+  margin-bottom: 20px;
 }
 body div#wizard #content #loading {
   padding: 10px 10px 10px 60px;
