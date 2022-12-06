@@ -15,7 +15,7 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
         </strong></font>
     <form action="install.php" method="post" id="install">
         <input type="hidden" name="s" value="install">
-        <h4 class="head system">
+        <h4 class="head system underline">
             <?php echo __('System Settings'); ?>
         </h4>
         <span class="subhead">
@@ -76,7 +76,7 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
             </font>
         </div>
 
-        <h4 class="head admin">
+        <h4 class="head admin underline">
             <?php echo __('Admin User'); ?>
         </h4>
         <span class="subhead">
@@ -161,7 +161,7 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
             </div>
         </div>
 
-        <h4 class="head database">
+        <h4 class="head database underline">
             <?php echo __('Database Settings'); ?>
         </h4>
         <span class="subhead">

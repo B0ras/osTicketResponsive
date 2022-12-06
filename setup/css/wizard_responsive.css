@@ -7193,6 +7193,7 @@ body div#wizard #content #main #install label {
 }
 body div#wizard #content #main #install h4 {
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 body div#wizard #content #loading {
   padding: 10px 10px 10px 60px;
