@@ -4,7 +4,7 @@ if (!defined('SETUPINC'))
 $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost_', 'dbhost' => 'localhost', 'lang_id' => 'en_US');
 ?>
 <div id="main" class="step2">
-    <h1>
+    <h1 class="underline">
         <?php echo __('osTicket Basic Installation'); ?>
     </h1>
     <p>

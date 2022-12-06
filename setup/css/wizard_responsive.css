@@ -7215,6 +7215,9 @@ body div#wizard #content #overlay {
   background: #000;
   z-index: 2000;
 }
+body div#wizard #content .step2 h1 {
+  margin-bottom: 20px;
+}
 body div#wizard.clear {
   height: 1px;
 }
