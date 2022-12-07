@@ -10,9 +10,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
     <p>
         <?php echo __('Please fill out the information below to continue your osTicket installation. All fields are required.'); ?>
     </p>
-    <font class="error"><strong>
+    <div class="error"><strong>
             <?php echo $errors['err']; ?>
-        </strong></font>
+        </strong></div>
     <form action="install.php" method="post" id="install">
         <input type="hidden" name="s" value="install">
         <h4 class="head system underline">
@@ -37,9 +37,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('Helpdesk Name'); ?>:
                 </label>
                 <a class=" tip" href="#helpdesk_name"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['name']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -50,9 +50,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('Default Email'); ?>:
                 </label>
                 <a class=" tip" href="#system_email"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['email']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -71,9 +71,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                 </label>
             </div>
             <a class="tip" href="#default_lang"><i class="icon-question-sign help-tip"></i></a>
-            <font class="error">&nbsp;
+            <div class="error">&nbsp;
                 <?php echo $errors['lang_id']; ?>
-            </font>
+            </div>
         </div>
 
         <h4 class="head admin underline">
@@ -90,9 +90,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('First Name'); ?>:
                 </label>
                 <a class="tip" href="#first_name"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['fname']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -103,9 +103,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('Last Name'); ?>:
                 </label>
                 <a class="tip" href="#last_name"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['lname']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -116,9 +116,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('Email Address'); ?>:
                 </label>
                 <a class="tip" href="#email"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['admin_email']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -129,9 +129,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('Username'); ?>:
                 </label>
                 <a class="tip" href="#username"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['username']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -142,9 +142,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('Password'); ?>:
                 </label>
                 <a class="tip" href="#password"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['passwd']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -155,9 +155,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('Retype Password'); ?>:
                 </label>
                 <a class="tip" href="#password2"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['passwd2']; ?>
-                </font>
+                </div>
             </div>
         </div>
 
@@ -166,9 +166,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
         </h4>
         <span class="subhead">
             <?php echo __('Database connection information'); ?>
-            <font class="error">
+            <div class="error">
                 <?php echo $errors['db']; ?>
-            </font>
+            </div>
         </span>
         <div>
             <div class="form-floating">
@@ -178,9 +178,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('MySQL Table Prefix'); ?>:
                 </label>
                 <a class="tip" href="#db_prefix"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['prefix']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -191,9 +191,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('MySQL Hostname'); ?>:
                 </label>
                 <a class="tip" href="#db_host"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['dbhost']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -204,9 +204,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('MySQL Database'); ?>:
                 </label>
                 <a class="tip" href="#db_schema"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['dbname']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -217,9 +217,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('MySQL Username'); ?>:
                 </label>
                 <a class="tip" href="#db_user"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['dbuser']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <div>
@@ -230,9 +230,9 @@ $info = ($_POST && $errors) ? Format::htmlchars($_POST) : array('prefix' => 'ost
                     <?php echo __('MySQL Password'); ?>:
                 </label>
                 <a class="tip" href="#db_password"><i class="icon-question-sign help-tip"></i></a>
-                <font class="error">
+                <div class="error">
                     <?php echo $errors['dbpass']; ?>
-                </font>
+                </div>
             </div>
         </div>
         <br>
