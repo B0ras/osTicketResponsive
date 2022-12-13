@@ -8,7 +8,8 @@
 <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="../js/jstz.min.js"></script>
 <script type="text/javascript" src="js/setup.js"></script>
-<script type="text/javascript" src="js/tips.js"></script>
+<!-- <script type="text/javascript" src="js/tips.js"></script> -->
+<script type="text/javascript" src="js/tips_responsive.js"></script>
 </body>
 
 </html>

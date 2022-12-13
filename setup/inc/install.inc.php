@@ -49,7 +49,8 @@ function show_alert($msg)
                     <!-- <a class=" tip" href="#helpdesk_name"><i class="icon-question-sign help-tip"></i></a> -->
 
                 </div>
-                <button class="btn btn-outline-custom-color" type="button">
+                <button class="btn btn-outline-custom-color tip" type="button" id="helpdesk_name"
+                    data-bs-toggle="popover" data-bs-trigger="hover">
                     <i class='bi bi-question-circle-fill'></i>
                 </button>
                 <!-- <span class="input-group-text">
@@ -67,10 +68,11 @@ function show_alert($msg)
                     <label for="inputDefaultEmail">
                         <?php echo __('Default Email'); ?>:
                     </label>
-                    <a class=" tip" href="#system_email"><i class="icon-question-sign help-tip"></i></a>
+                    <!-- <a class=" tip" href="#system_email"><i class="icon-question-sign help-tip"></i></a> -->
 
                 </div>
-                <button class="btn btn-outline-custom-color" type="button">
+                <button class="btn btn-outline-custom-color tip" type="button" id="system_email"
+                    data-bs-toggle="popover" data-bs-trigger="hover">
                     <i class='bi bi-question-circle-fill'></i>
                 </button>
             </div>
@@ -92,7 +94,7 @@ function show_alert($msg)
                         <?php echo __('Primary Language'); ?>:
                     </label>
                 </div>
-                <a class="tip" href="#default_lang"><i class="icon-question-sign help-tip"></i></a>
+                <!-- <a class="tip" href="#default_lang"><i class="icon-question-sign help-tip"></i></a> -->
 
             </div>
 
@@ -110,12 +112,13 @@ function show_alert($msg)
                         <label for="inputFName">
                             <?php echo __('First Name'); ?>:
                         </label>
-                        <a class="tip" href="#first_name"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#first_name"><i class="icon-question-sign help-tip"></i></a> -->
 
 
                     </div>
 
-                    <button class="btn btn-outline-custom-color" type="button">
+                    <button id="first_name" class="btn btn-outline-custom-color tip" type="button"
+                        data-bs-toggle="popover" data-bs-trigger="hover">
                         <i class='bi bi-question-circle-fill'></i>
                     </button>
                 </div>
@@ -131,11 +134,12 @@ function show_alert($msg)
                         <label for="inputLName">
                             <?php echo __('Last Name'); ?>:
                         </label>
-                        <a class="tip" href="#last_name"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#last_name"><i class="icon-question-sign help-tip"></i></a> -->
 
                     </div>
 
-                    <button class="btn btn-outline-custom-color" type="button">
+                    <button id="last_name" class="btn btn-outline-custom-color tip" type="button"
+                        data-bs-toggle="popover" data-bs-trigger="hover">
                         <i class='bi bi-question-circle-fill'></i>
                     </button>
 
@@ -152,11 +156,12 @@ function show_alert($msg)
                         <label for="inputEmail">
                             <?php echo __('Email Address'); ?>:
                         </label>
-                        <a class="tip" href="#email"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#email"><i class="icon-question-sign help-tip"></i></a> -->
 
                     </div>
 
-                    <button class="btn btn-outline-custom-color" type="button">
+                    <button id="email" class="btn btn-outline-custom-color tip" type="button" data-bs-toggle="popover"
+                        data-bs-trigger="hover">
                         <i class='bi bi-question-circle-fill'></i>
                     </button>
                 </div>
@@ -173,10 +178,11 @@ function show_alert($msg)
                         <label for="inputUsername">
                             <?php echo __('Username'); ?>:
                         </label>
-                        <a class="tip" href="#username"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#username"><i class="icon-question-sign help-tip"></i></a> -->
 
                     </div>
-                    <button class="btn btn-outline-custom-color" type="button">
+                    <button id="username" class="btn btn-outline-custom-color tip" type="button"
+                        data-bs-toggle="popover" data-bs-trigger="hover">
                         <i class='bi bi-question-circle-fill'></i>
                     </button>
                 </div>
@@ -193,11 +199,12 @@ function show_alert($msg)
                         <label for="inputPassword">
                             <?php echo __('Password'); ?>:
                         </label>
-                        <a class="tip" href="#password"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#password"><i class="icon-question-sign help-tip"></i></a> -->
 
                     </div>
 
-                    <button class="btn btn-outline-custom-color" type="button">
+                    <button id="password" class="btn btn-outline-custom-color tip" type="button"
+                        data-bs-toggle="popover" data-bs-trigger="hover">
                         <i class='bi bi-question-circle-fill'></i>
                     </button>
                 </div>
@@ -213,10 +220,11 @@ function show_alert($msg)
                         <label for="inputPassword2">
                             <?php echo __('Retype Password'); ?>:
                         </label>
-                        <a class="tip" href="#password2"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#password2"><i class="icon-question-sign help-tip"></i></a> -->
 
                     </div>
-                    <button class="btn btn-outline-custom-color" type="button">
+                    <button id="password2" class="btn btn-outline-custom-color tip" type="button"
+                        data-bs-toggle="popover" data-bs-trigger="hover">
                         <i class='bi bi-question-circle-fill'></i>
                     </button>
                 </div>
@@ -243,11 +251,12 @@ function show_alert($msg)
                         <label for="inputPrefix">
                             <?php echo __('MySQL Table Prefix'); ?>:
                         </label>
-                        <a class="tip" href="#db_prefix"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#db_prefix"><i class="icon-question-sign help-tip"></i></a> -->
 
                     </div>
 
-                    <button class="btn btn-outline-custom-color" type="button">
+                    <button id="db_prefix" class="btn btn-outline-custom-color tip" type="button"
+                        data-bs-toggle="popover" data-bs-trigger="hover">
                         <i class='bi bi-question-circle-fill'></i>
                     </button>
                 </div>
@@ -256,16 +265,17 @@ function show_alert($msg)
                 </div>
             </div>
             <div>
-                <div class=" input-group">
+                <div class="input-group">
                     <div class="form-floating">
                         <input id="inputHost" class="form-control" type="text" name="dbhost" size="45" tabindex="10"
                             value="<?php echo $info['dbhost']; ?>" placeholder="db host">
                         <label for="inputHost">
                             <?php echo __('MySQL Hostname'); ?>:
                         </label>
-                        <a class="tip" href="#db_host"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#db_host"><i class="icon-question-sign help-tip"></i></a> -->
                     </div>
-                    <button class="btn btn-outline-custom-color" type="button">
+                    <button id="db_host" class="btn btn-outline-custom-color tip" type="button" data-bs-toggle="popover"
+                        data-bs-trigger="hover">
                         <i class='bi bi-question-circle-fill'></i>
                     </button>
                 </div>
@@ -282,11 +292,12 @@ function show_alert($msg)
                         <label for="inputDB">
                             <?php echo __('MySQL Database'); ?>:
                         </label>
-                        <a class="tip" href="#db_schema"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#db_schema"><i class="icon-question-sign help-tip"></i></a> -->
 
                     </div>
 
-                    <button class="btn btn-outline-custom-color" type="button">
+                    <button id="db_schema" class="btn btn-outline-custom-color tip" type="button"
+                        data-bs-toggle="popover" data-bs-trigger="hover">
                         <i class='bi bi-question-circle-fill'></i>
                     </button>
                 </div>
@@ -302,11 +313,12 @@ function show_alert($msg)
                         <label for="inputUser">
                             <?php echo __('MySQL Username'); ?>:
                         </label>
-                        <a class="tip" href="#db_user"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#db_user"><i class="icon-question-sign help-tip"></i></a> -->
                     </div>
 
 
-                    <button class="btn btn-outline-custom-color" type="button">
+                    <button id="db_user" class="btn btn-outline-custom-color tip" type="button" data-bs-toggle="popover"
+                        data-bs-trigger="hover">
                         <i class='bi bi-question-circle-fill'></i>
                     </button>
                 </div>
@@ -322,13 +334,15 @@ function show_alert($msg)
                         <label for="inputPass">
                             <?php echo __('MySQL Password'); ?>:
                         </label>
-                        <a class="tip" href="#db_password"><i class="icon-question-sign help-tip"></i></a>
+                        <!-- <a class="tip" href="#db_password"><i class="icon-question-sign help-tip"></i></a> -->
 
 
                     </div>
 
-                    <button class="btn btn-outline-custom-color" type="button">
-                        <i class='bi bi-question-circle-fill'></i>
+                    <button id="db_password" class="btn btn-outline-custom-color tip" type="button"
+                        data-bs-toggle="popover" data-bs-trigger="hover" data-bs-title="test"
+                        data-bs-content="helloWorld"> <i class='bi
+                        bi-question-circle-fill'></i>
                     </button>
                 </div>
                 <div class="error">
@@ -344,21 +358,9 @@ function show_alert($msg)
             <input type="hidden" name="timezone" id="timezone" />
     </form>
 </div>
-<!-- <div>
-    <p><strong>
-            <?php echo __('Need Help?'); ?>
-        </strong>
-        <?php echo __('We provide <u>professional installation services</u> and commercial support.'); ?> <a
-            target="_blank" href="https://osticket.com/support">
-            <?php echo __('Learn More!'); ?>
-        </a>
-    </p>
+<!-- <h4>
+    <?php echo __('Doing stuff!'); ?>
+</h4>
+<?php echo __('Please wait... while we install your new support ticket system!'); ?> -->
 </div>
-<div id="overlay"></div>
-<div id="loading">
-    <h4>
-        <?php echo __('Doing stuff!'); ?>
-    </h4>
-    <?php echo __('Please wait... while we install your new support ticket system!'); ?>
-</div> -->
 </div>
