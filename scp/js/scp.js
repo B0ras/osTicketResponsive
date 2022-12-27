@@ -512,36 +512,49 @@ var scp_prep = function () {
     });
     // Ensure the "new ticket" link is never in the drop-down menu
     $('#new-ticket').parent('li').addClass('primary-only');
-    $('#customQ_nav').overflowmenu({
-      guessHeight: false,
-      // items: 'li.top-queue',
-      change: function (e, ui) {
-        var handle = ui.container.find('.jb-overflowmenu-menu-secondary-handle');
-        handle.toggle(ui.secondary.children().length > 0);
-      }
-    });
+    // $('#customQ_nav').overflowmenu({
+    //   guessHeight: false,
+    //   // items: 'li.top-queue',
+    //   change: function (e, ui) {
+    //     var handle = ui.container.find('.jb-overflowmenu-menu-secondary-handle');
+    //     handle.toggle(ui.secondary.children().length > 0);
+    //   }
+    // });
   });
 
   // Auto fetch queue counts
   $(function () {
-    var fired = false;
-    $('#customQ_nav li.item').hover(function () {
-      if (fired) return;
-      fired = true;
-      $.ajax({
-        url: 'ajax.php/queue/counts',
-        dataType: 'json',
-        success: function (json) {
-          $('li span.queue-count').each(function (i, e) {
-            var $e = $(e);
-            $e.text(json['q' + $e.data('queueId')]);
-            $(e).parents().find('#queue-count-bucket').show();
-          });
-        }
-      });
-    });
+
+    if (window.matchMedia("(max-width: 768px)").matches) {
+
+      // if device is 768px wide or less... 
+      console.log("Device is small");
+      $('i.icon-sort-down').click(getCounts);
+
+      return;
+    }
+    console.log("Device is big");
+    $('#customQ_nav li.item').hover(getCounts);
   });
 };
+
+var fired = false;
+function getCounts() {
+  if (fired) return;
+  fired = true;
+  $.ajax({
+    url: 'ajax.php/queue/counts',
+    dataType: 'json',
+    success: function (json) {
+      $('li span.queue-count').each(function (i, e) {
+        var $e = $(e);
+        $e.text(json['q' + $e.data('queueId')]);
+        $(e).parents().find('#queue-count-bucket').show();
+      });
+    }
+  });
+
+}
 
 $(document).ready(scp_prep);
 $(document).on('pjax:end', scp_prep);

@@ -8141,6 +8141,7 @@ body html #container div#pjax-container #nav .inactive:hover > ul {
   visibility: visible;
   opacity: 1;
   transition-delay: 0.25s;
+  list-style: none;
 }
 body #container div#pjax-container #nav .inactive a,
 body html #container div#pjax-container #nav .inactive a {
