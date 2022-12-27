@@ -23,7 +23,8 @@
             "type": "php",
             "request": "launch",
             "program": "${workspaceFolder}/manage.php",
-            "args": ["deploy", "--setup", "C:\\xampp\\htdocs\\osticket\\"]
+            "args": ["deploy", "--setup", "C:\\xampp\\htdocs\\osticket\\"],
+            "internalConsoleOptions": "openOnFirstSessionStart"
         },
         {
             "name": "Launch currently open script",
