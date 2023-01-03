@@ -9414,6 +9414,17 @@ body html #content {
   padding: 10px 10px 20px 10px;
   background: #fff;
 }
+body #content #basic_search,
+body html #content #basic_search {
+  display: flex;
+  background-color: #f4f4f4;
+  margin: -10px 0;
+  margin-bottom: 5px;
+  padding: 8px;
+  box-shadow: inset 0 4px 12px -10px black;
+  border-bottom: 1px dotted #aaa;
+  border-radius: 0 0 5px 5px;
+}
 body a,
 body html a {
   color: #184e81;
@@ -10363,6 +10374,7 @@ body html .tip_box {
   height: 30px;
   position: absolute;
   z-index: 10;
+  width: 50vw;
 }
 body .tip_arrow,
 body html .tip_arrow {
@@ -10818,7 +10830,6 @@ body html .button {
   display: inline-block;
   vertical-align: bottom;
   margin: 0 4px;
-  height: 22px;
   line-height: 22px;
   border: none;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset;
@@ -12286,16 +12297,6 @@ body html .grid.form .field > .field-hint-text {
   font-style: italic;
   margin: 0 10px 5px 10px;
   opacity: 0.8;
-}
-body #basic_search,
-body html #basic_search {
-  background-color: #f4f4f4;
-  margin: -10px 0;
-  margin-bottom: 5px;
-  padding: 8px;
-  box-shadow: inset 0 4px 12px -10px black;
-  border-bottom: 1px dotted #aaa;
-  border-radius: 0 0 5px 5px;
 }
 body #basic-ticket-search,
 body html #basic-ticket-search {
