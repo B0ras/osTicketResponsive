@@ -62,6 +62,7 @@ if ($count) { ?>
 <?php csrf_token(); ?>
  <input type="hidden" name="a" value="mass_process" >
  <input type="hidden" name="do" id="action" value="" >
+ <div class="table-responsive">
  <table class="list" border="0" cellspacing="1" cellpadding="2" width="940">
     <thead>
         <tr>
@@ -146,6 +147,8 @@ if ($count) { ?>
     ?>
     </tbody>
 </table>
+
+ </div>
 </form>
 <?php
  } ?>
