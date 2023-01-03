@@ -61,11 +61,12 @@ if ($_POST)
  <input type="hidden" name="do" value="create">
  <input type="hidden" name="a" value="open">
 <div style="margin-bottom:20px; padding-top:5px;">
-    <div class="pull-left flush-left">
+    <div class="flush-left">
         <h2><?php echo __('Open a New Ticket');?></h2>
     </div>
 </div>
- <table class="form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
+<div class="table-responsive">
+<table class="form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
     <!-- This looks empty - but beware, with fixed table layout, the user
          agent will usually only consult the cells in the first row to
@@ -472,6 +473,8 @@ print $response_form->getField('attachments')->render();
         </tr>
     </tbody>
 </table>
+
+</div>
 <p style="text-align:center;">
     <input type="submit" name="submit" value="<?php echo _P('action-button', 'Open');?>">
     <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
@@ -530,7 +533,7 @@ $(function() {
     });
 
     $('.userSelection').select2({
-      width: '450px',
+      width: 'auto',
       minimumInputLength: 3,
       ajax: {
         url: "ajax.php/users/local",
@@ -569,7 +572,7 @@ $(function() {
      });
 
     $('.collabSelections').select2({
-      width: '450px',
+      width: 'auto',
       minimumInputLength: 3,
       ajax: {
         url: "ajax.php/users/local",

@@ -8057,6 +8057,9 @@ body html #container div#header {
   box-shadow: inset 0 -10px 8px -5px rgba(0, 0, 0, 0.1);
   padding: 0 5% 0 5%;
   height: fit-content;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 10px;
 }
 body #container div#header.row,
 body html #container div#header.row {
@@ -8086,7 +8089,6 @@ body #container div#pjax-container #nav,
 body html #container div#pjax-container #nav {
   background: #eee;
   padding-top: 4px;
-  z-index: 200;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #c5d9ec;
   padding-left: 0;
@@ -9410,6 +9412,8 @@ body html #content {
   border-bottom: 3px solid #bbb;
   padding: 10px 10px 20px 10px;
   background: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 body #content #basic_search,
 body html #content #basic_search {
@@ -11827,7 +11831,7 @@ body html .sticky.bar.fixed {
   top: 0;
   left: 0;
   z-index: 6;
-  width: 100%;
+  width: 100vw;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.95);
   padding: 10px 20px;
