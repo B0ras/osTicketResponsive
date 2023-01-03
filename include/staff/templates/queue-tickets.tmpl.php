@@ -132,7 +132,7 @@ $pageNav->setURL('tickets.php', $args);
 
 <!-- SEARCH FORM START -->
 <div id='basic_search'>
-    <div class="pull-right" style="height:25px">
+    <div class="order-2" style="height:25px">
         <span class="valign-helper"></span>
         <?php
         require 'queue-quickfilter.tmpl.php';
@@ -140,7 +140,7 @@ $pageNav->setURL('tickets.php', $args);
             require 'queue-sort.tmpl.php';
         ?>
     </div>
-    <form action="tickets.php" method="get" onsubmit="javascript:
+    <form class="order-1 flex-grow-1" action="tickets.php" method="get" onsubmit="javascript:
   $.pjax({
     url:$(this).attr('action') + '?' + $(this).serialize(),
     container:'#pjax-container',
@@ -149,11 +149,12 @@ $pageNav->setURL('tickets.php', $args);
 return false;">
         <input type="hidden" name="a" value="search">
         <input type="hidden" name="search-type" value="" />
-        <div class="attached input">
-            <input type="text" class="basic-search" data-url="ajax.php/tickets/lookup" name="query" autofocus size="30"
-                value="<?php echo Format::htmlchars($_REQUEST['query'] ?? null, true); ?>" autocomplete="off"
-                autocorrect="off" autocapitalize="off">
-            <button type="submit" class="attached button"><i class="icon-search"></i>
+        <div class="attached input-group">
+            <input type="text" class="basic-search form-control" data-url="ajax.php/tickets/lookup" name="query"
+                autofocus size="30" value="<?php echo Format::htmlchars($_REQUEST['query'] ?? null, true); ?>"
+                autocomplete="off" autocorrect="off" autocapitalize="off" aria-describedby="search-button">
+            <button type="submit" class="attached button" id="search-button">
+                <i class="icon-search"></i>
             </button>
         </div>
         <a href="#" onclick="javascript:
@@ -204,13 +205,13 @@ return false;">
                         <?php
 
                         if ($queue->id > 0 && $queue->isOwner($thisstaff)) { ?>
-                        <li class="danger">
-                            <a class="no-pjax confirm-action" href="#" data-dialog="ajax.php/queue/<?php
-                            echo $queue->id; ?>/delete"><i class="icon-fixed-width icon-trash"></i>
-                                <?php echo __('Delete'); ?>
-                            </a>
-                        </li>
-                        <?php } ?>
+                            <li class="danger">
+                                <a class="no-pjax confirm-action" href="#" data-dialog="ajax.php/queue/<?php
+                                echo $queue->id; ?>/delete"><i class="icon-fixed-width icon-trash"></i>
+                                    <?php echo __('Delete'); ?>
+                                </a>
+                            </li>
+                            <?php } ?>
                     </ul>
                 </div>
             </div>
@@ -240,8 +241,8 @@ return false;">
                     <?php
                     $canManageTickets = $thisstaff->canManageTickets();
                     if ($canManageTickets) { ?>
-                    <th style="width:12px"></th>
-                    <?php
+                        <th style="width:12px"></th>
+                        <?php
                     }
 
                     foreach ($columns as $C) {
@@ -272,8 +273,8 @@ return false;">
                 foreach ($tickets as $T) {
                     echo '<tr>';
                     if ($canManageTickets) { ?>
-                <td><input type="checkbox" class="ckb" name="tids[]" value="<?php echo $T['ticket_id']; ?>" /></td>
-                <?php
+                        <td><input type="checkbox" class="ckb" name="tids[]" value="<?php echo $T['ticket_id']; ?>" /></td>
+                        <?php
                     }
                     foreach ($columns as $C) {
                         list($contents, $styles) = $C->render($T);
@@ -291,21 +292,21 @@ return false;">
                 <tr>
                     <td colspan="<?php echo count($columns) + 1; ?>">
                         <?php if ($count && $canManageTickets) {
-                            echo __('Select'); ?>:&nbsp;
-                        <a id="selectAll" href="#ckb">
-                            <?php echo __('All'); ?>
-                        </a>&nbsp;&nbsp;
-                        <a id="selectNone" href="#ckb">
-                            <?php echo __('None'); ?>
-                        </a>&nbsp;&nbsp;
-                        <a id="selectToggle" href="#ckb">
-                            <?php echo __('Toggle'); ?>
-                        </a>&nbsp;&nbsp;
-                        <?php } else {
-                            echo '<i>';
-                            echo $ferror ? Format::htmlchars($ferror) : __('Query returned 0 results.');
-                            echo '</i>';
-                        } ?>
+                        echo __('Select'); ?>:&nbsp;
+                            <a id="selectAll" href="#ckb">
+                                <?php echo __('All'); ?>
+                            </a>&nbsp;&nbsp;
+                            <a id="selectNone" href="#ckb">
+                                <?php echo __('None'); ?>
+                            </a>&nbsp;&nbsp;
+                            <a id="selectToggle" href="#ckb">
+                                <?php echo __('Toggle'); ?>
+                            </a>&nbsp;&nbsp;
+                            <?php } else {
+                        echo '<i>';
+                        echo $ferror ? Format::htmlchars($ferror) : __('Query returned 0 results.');
+                        echo '</i>';
+                    } ?>
                     </td>
                 </tr>
             </tfoot>
@@ -314,19 +315,19 @@ return false;">
 
     <?php
     if ($count > 0 || $skipCount) { //if we actually had any tickets returned.
-    ?>
-    <div>
-        <span class="faded pull-right">
-            <?php echo $pageNav->showing(); ?>
-        </span>
-        <?php
-        echo __('Page') . ':' . $pageNav->getPageLinks() . '&nbsp;';
         ?>
-        <a href="#tickets/export/<?php echo $queue->getId(); ?>" id="queue-export" class="no-pjax export">
-            <?php echo __('Export'); ?>
-        </a>
-        <i class="help-tip icon-question-sign" href="#export"></i>
-    </div>
-    <?php
+        <div>
+            <span class="faded pull-right">
+                <?php echo $pageNav->showing(); ?>
+            </span>
+            <?php
+            echo __('Page') . ':' . $pageNav->getPageLinks() . '&nbsp;';
+            ?>
+            <a href="#tickets/export/<?php echo $queue->getId(); ?>" id="queue-export" class="no-pjax export">
+                <?php echo __('Export'); ?>
+            </a>
+            <i class="help-tip icon-question-sign" href="#export"></i>
+        </div>
+        <?php
     } ?>
 </form>
