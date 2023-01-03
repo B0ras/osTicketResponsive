@@ -15,7 +15,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
         <i class="icon-bell-alt"></i> <?php echo __('Alerts &amp; Notices'); ?></a></li>
 </ul>
 <div id="tasks-tabs_container">
-   <div id="settings" class="tab_content">
+   <div id="settings" class="tab_content table-responsive">
     <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
@@ -103,7 +103,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
         </tbody>
     </table>
    </div>
-   <div id="alerts" class="tab_content" style="display:none;">
+   <div id="alerts" class="tab_content table-responsive" style="display:none;">
     <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
         <tbody>
             <tr><th><em><b><?php echo __('New Task Alert'); ?></b>:

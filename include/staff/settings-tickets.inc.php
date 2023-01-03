@@ -18,7 +18,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
     <li><a href="#queues"><i class="icon-table"></i>
         <?php echo __('Queues'); ?></a></li>
 </ul>
-<div class="tab_content" id="settings">
+<div class="tab_content table-responsive" id="settings">
 <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
@@ -266,16 +266,16 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
     </tbody>
 </table>
 </div>
-<div class="hidden tab_content" id="autoresp"
+<div class="hidden tab_content table-responsive" id="autoresp"
     data-tip-namespace="settings.autoresponder">
     <?php include STAFFINC_DIR . 'settings-autoresp.inc.php'; ?>
 </div>
-<div class="hidden tab_content" id="alerts"
+<div class="hidden tab_content table-responsive" id="alerts"
     data-tip-namespace="settings.alerts">
     <?php include STAFFINC_DIR . 'settings-alerts.inc.php'; ?>
 </div>
 
-<div class="hidden tab_content" id="queues">
+<div class="hidden tab_content table-responsive" id="queues">
     <?php include STAFFINC_DIR . 'queues-ticket.inc.php'; ?>
 </div>
 

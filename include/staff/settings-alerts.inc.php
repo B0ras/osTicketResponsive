@@ -1,3 +1,4 @@
+
 <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <tbody>
         <tr><th><em><b><?php echo __('New Ticket Alert'); ?></b>:
@@ -221,3 +222,4 @@
         </tr>
     </tbody>
 </table>
+

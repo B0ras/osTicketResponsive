@@ -13,7 +13,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
             <i class="icon-file-text"></i> <?php echo __('Templates'); ?></a></li>
     </ul>
     <div id="agents-tabs_container">
-        <div id="settings" class="tab_content">
+        <div id="settings" class="tab_content table-responsive">
             <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
                 <tbody>
                     <tr>
@@ -171,7 +171,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                 </tbody>
             </table>
         </div>
-        <div id="templates" class="tab_content hidden">
+        <div id="templates" class="tab_content hidden table-responsive">
             <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
                 <tbody>
                     <?php

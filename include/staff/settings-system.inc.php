@@ -7,6 +7,7 @@ $gmtime = Misc::gmtime();
 <form action="settings.php?t=system" method="post" class="save">
 <?php csrf_token(); ?>
 <input type="hidden" name="t" value="system" >
+<div class="table-responsive">
 <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
@@ -446,6 +447,8 @@ $gmtime = Misc::gmtime();
         </tr>
     </tbody>
 </table>
+
+</div>
 <p style="text-align:center;">
     <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
     <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
