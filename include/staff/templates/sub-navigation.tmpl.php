@@ -46,6 +46,11 @@ $info = $nav->getSubNavInfo();
                 foreach ($item['attr'] as $name => $value)
                     $attr .= sprintf("%s='%s' ", $name, $value);
 
+            if ($id == "new-ticket") {
+                $attr .= "data-bs-toggle='modal' ";
+                $attr .= "data-bs-target='#popup' ";
+                // continue;
+            }
             echo sprintf(
                 '<li><a class="%s" href="%s" title="%s" id="%s" %s>%s</a></li>',
                 $class, $item['href'], $item['title'],
