@@ -129,7 +129,7 @@ else
 <?php csrf_token(); ?>
  <input type="hidden" name="do" value="mass_process" >
  <input type="hidden" id="action" name="a" value="" >
- <div class="table-responsive">
+ <div class="table-responsive" style="margin-top:45px">
  <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
     <thead>
         <tr>

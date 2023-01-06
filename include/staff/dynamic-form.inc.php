@@ -42,6 +42,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     — <?php echo $info['title']; ?></small>
         <?php } ?>
     </h2>
+    <div class="table-responsive">
     <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
@@ -292,6 +293,8 @@ if ($form && count($langs) > 1) { ?>
         </tr>
     </tbody>
     </table>
+
+    </div>
 <p class="centered">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
     <input type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
