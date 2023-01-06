@@ -8302,6 +8302,385 @@ textarea.form-control-lg {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
 
+div#header {
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  background-color: rgb(248, 248, 248);
+  box-shadow: inset 0 -10px 8px -5px rgba(0, 0, 0, 0.1);
+  padding: 0 5% 0 5%;
+  height: fit-content;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #aaa;
+}
+div#header.row {
+  --bs-gutter-x: 0;
+}
+div#header a {
+  color: #e65524;
+}
+div#header div p {
+  display: block;
+  width: auto;
+  margin: 10px 3% 10px 3%;
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+div#pjax-container {
+  width: 100%;
+  margin: 0;
+  /*** Overflow navigation ***/
+}
+div#pjax-container .jb-overflowmenu-menu-secondary {
+  background-color: #f7f7f7;
+  border: 1px solid #bebebe;
+  padding: 5px 0;
+  /*** Overflow Dropdown ***/
+}
+div#pjax-container .jb-overflowmenu-menu-secondary li.item {
+  position: relative;
+  padding: 0px 10px;
+  display: inline-block;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom: 1px solid #bebebe;
+  white-space: nowrap;
+  list-style: none;
+}
+div#pjax-container .jb-overflowmenu-menu-secondary li.item:before {
+  font-family: "FontAwesome";
+  content: "\f0d9";
+  padding: 5px;
+}
+div#pjax-container .jb-overflowmenu-menu-secondary li.item a > i {
+  margin-top: 5px;
+}
+div#pjax-container .jb-overflowmenu-menu-secondary li.item:hover {
+  padding: 0 10px;
+  color: #e65524;
+  background-color: #fff;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+}
+div#pjax-container .jb-overflowmenu-menu-secondary li.item:hover > a {
+  color: #e65524;
+  text-decoration: none;
+}
+div#pjax-container .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border: solid 1px #ddd;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 12px 0;
+  background: #fff;
+  font-size: 0.95em;
+  list-style: none;
+  left: -247px;
+  top: -1px;
+  position: absolute;
+  z-index: 10;
+}
+div#pjax-container .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ {
+  margin-top: 2px;
+  float: left;
+}
+div#pjax-container .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ .manageQ {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0px;
+  padding: 34px 28px;
+}
+div#pjax-container .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ .manageQ ul {
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding: 6px 0;
+  background-color: #fff;
+}
+div#pjax-container .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ:hover .manageQ {
+  display: block;
+}
+div#pjax-container .jb-overflowmenu-menu-secondary .customQ-dropdown li > span {
+  padding: 0 5px;
+}
+
+div#content .icon-bar {
+  margin-bottom: 20px;
+  padding-top: 5px;
+}
+div#content .icon-bar .sticky.bar.opaque .content {
+  width: 100%;
+}
+div#content .table-header {
+  margin-bottom: 45px;
+}
+
+#nav {
+  background: #eee;
+  padding-top: 4px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #c5d9ec;
+  padding-left: 0;
+  padding-right: 0;
+}
+#nav .active,
+#nav .inactive {
+  display: inline-block;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 26px;
+  color: #555;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  border-style: solid;
+  border-width: 1px 1px 0;
+  border-color: transparent;
+}
+#nav .active a,
+#nav .inactive a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#nav .active {
+  background-color: #f7f7f7;
+}
+#nav .active a {
+  color: #004a80;
+  font-weight: bold;
+}
+#nav .active,
+#nav .active #sub_nav > li {
+  padding: 0;
+  list-style: none;
+  display: inline;
+}
+#nav .inactive:hover {
+  background-color: #fbfbfb;
+}
+#nav .inactive:hover > ul {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.25s;
+  list-style: none;
+}
+#nav .inactive a {
+  color: #004a80;
+  font-weight: bold;
+}
+#nav .inactive a li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+#nav .inactive > ul {
+  background: #fbfbfb;
+  margin: 0;
+  padding: 5px 0;
+  left: -1px;
+  z-index: 500;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  display: block;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear, opacity 0.1s linear;
+}
+#nav .inactive li a {
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+  padding: 0 10px 0 34px;
+}
+#nav .inactive li a:hover {
+  color: #e65524;
+  background-color: #fbfbfb;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#nav a:hover,
+#nav #sub_nav a:hover,
+#nav a:hover i[class^=icon-],
+#nav .tabs a {
+  text-decoration: none;
+}
+#nav > li + li {
+  margin-left: 8px;
+}
+
+#nav,
+#sub_nav {
+  clear: both;
+  margin: 0;
+  padding: 0 20px;
+  line-height: 26px;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  white-space: nowrap;
+}
+
+#nav li.active,
+#nav li.inactive:hover {
+  box-shadow: 4px -3px 6px -3px rgba(0, 0, 0, 0.3);
+  border-color: #c5d9ec;
+}
+
+nav {
+  padding: 0;
+  margin: 0;
+}
+
+#sub_nav {
+  background: #f7f7f7;
+  border-bottom: 1px solid #bebebe;
+  padding: 2px 20px;
+  display: flex;
+  align-content: flex-start;
+  width: 100%;
+}
+#sub_nav a.active, #sub_nav li.active > a, #sub_nav li.child.active > a #customQ_nav .jb-overflowmenu-menu-primary li.item > a.active {
+  font-weight: bold;
+}
+#sub_nav > li + li > a {
+  margin-left: 10px;
+}
+@media (max-width: 576px) {
+  #sub_nav li {
+    width: 100%;
+    border-bottom: #000 solid 1px;
+  }
+}
+#sub_nav li a {
+  margin-left: 10px;
+}
+#sub_nav li.child.active > a {
+  font-weight: 500;
+}
+#sub_nav .open {
+  background-image: url(../images/icons/open.gif);
+}
+#sub_nav .answered {
+  background-image: url(../images/icons/answered.gif);
+}
+#sub_nav .mine {
+  background-image: url(../images/icons/mine.gif);
+}
+#sub_nav .closed {
+  background-image: url(../images/icons/closed.gif);
+}
+#sub_nav .search {
+  background-image: url(../images/icons/search.gif);
+}
+#sub_nav .new {
+  background-image: url(../images/icons/new.gif);
+}
+
+#sub_nav > li > a,
+#customQ_nav .jb-overflowmenu-menu-primary li.item > a {
+  display: inline-block;
+  padding: 5px 10px 5px 21px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  color: #000;
+  width: 100%;
+}
+
+#pjax-container nav {
+  --bs-navbar-padding-x: none;
+}
+
+nav .container-fluid, nav .container-sm, nav .container-md, nav .container-lg, nav .container-xl, nav .container-xxl {
+  padding: 0;
+}
+
+/***************************************
+Overflow Menu
+****************************************/
+.jb-overflowmenu {
+  height: 35px;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  /*holds the overflow menu and label*/
+  /******** Overflow menu and Dropdown *********/
+  /**********************End Custom Queues Dropdown******************/
+}
+.jb-overflowmenu .placeholder {
+  visibility: hidden;
+}
+.jb-overflowmenu .jb-overflowmenu-helper-postion {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0px;
+  overflow: visible;
+}
+.jb-overflowmenu .jb-overflowmenu-menu-primary {
+  padding: 0;
+  margin: 2px 0 0 0;
+  height: 30px !important;
+}
+.jb-overflowmenu .jb-overflowmenu-menu-primary li.item {
+  display: inline-block;
+  padding: 6px 0px;
+  margin: 0 0px;
+}
+.jb-overflowmenu .jb-overflowmenu-menu-primary li.item > a {
+  padding: 4px 10px;
+}
+.jb-overflowmenu .jb-overflowmenu-container {
+  left: auto;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  border-bottom: 1px solid #bebebe;
+  border-left: 1px solid #bebebe;
+  background-color: #eee;
+}
+.jb-overflowmenu .jb-overflowmenu-menu-secondary-handle {
+  text-align: center;
+  padding: 5px;
+  line-height: 15px;
+  color: #666;
+}
+.jb-overflowmenu .jb-overflowmenu-container > a.jb-overflowmenu-menu-secondary-handle {
+  color: #666;
+  padding: 9px;
+  background-color: #eee;
+  border-right: 1px solid #aaa;
+}
+.jb-overflowmenu .jb-overflowmenu-container > a.jb-overflowmenu-menu-secondary-handle:hove {
+  color: #000;
+  background-color: #ddd;
+}
+.jb-overflowmenu .jb-overflowmenu-menu-secondary {
+  top: auto;
+  bottom: auto;
+  left: auto;
+  display: none;
+  position: absolute;
+  z-index: 9;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: "Lato", "Helvetica Neue", arial, helvetica, sans-serif;
   font-weight: 400;
@@ -8371,428 +8750,6 @@ body html #container {
   margin: 0 5% 0 5%;
   width: 90%;
   min-width: 260px;
-}
-body #container div#header,
-body html #container div#header {
-  border-left: 1px solid #aaa;
-  border-right: 1px solid #aaa;
-  background-color: rgb(248, 248, 248);
-  box-shadow: inset 0 -10px 8px -5px rgba(0, 0, 0, 0.1);
-  padding: 0 5% 0 5%;
-  height: fit-content;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-top: 10px;
-  border-top: 1px solid #aaa;
-}
-body #container div#header.row,
-body html #container div#header.row {
-  --bs-gutter-x: 0;
-}
-body #container div#header a,
-body html #container div#header a {
-  color: #e65524;
-}
-body #container div#header div p,
-body html #container div#header div p {
-  display: block;
-  width: auto;
-  margin: 10px 3% 10px 3%;
-  background: #eee;
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
-}
-body #container div#pjax-container,
-body html #container div#pjax-container {
-  width: 100%;
-  margin: 0;
-  /**********************End Custom Queues Dropdown******************/
-}
-body #container div#pjax-container #nav,
-body html #container div#pjax-container #nav {
-  background: #eee;
-  padding-top: 4px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #c5d9ec;
-  padding-left: 0;
-  padding-right: 0;
-}
-body #container div#pjax-container #nav .active,
-body #container div#pjax-container #nav .inactive,
-body html #container div#pjax-container #nav .active,
-body html #container div#pjax-container #nav .inactive {
-  display: inline-block;
-  width: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 26px;
-  color: #555;
-  text-align: center;
-  border-radius: 5px 5px 0 0;
-  border-style: solid;
-  border-width: 1px 1px 0;
-  border-color: transparent;
-}
-body #container div#pjax-container #nav .active a,
-body #container div#pjax-container #nav .inactive a,
-body html #container div#pjax-container #nav .active a,
-body html #container div#pjax-container #nav .inactive a {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-body #container div#pjax-container #nav .active,
-body html #container div#pjax-container #nav .active {
-  background-color: #f7f7f7;
-}
-body #container div#pjax-container #nav .active a,
-body html #container div#pjax-container #nav .active a {
-  color: #004a80;
-  font-weight: bold;
-}
-body #container div#pjax-container #nav .active,
-body #container div#pjax-container #nav .active #sub_nav > li,
-body html #container div#pjax-container #nav .active,
-body html #container div#pjax-container #nav .active #sub_nav > li {
-  padding: 0;
-  list-style: none;
-  display: inline;
-}
-body #container div#pjax-container #nav .inactive:hover,
-body html #container div#pjax-container #nav .inactive:hover {
-  background-color: #fbfbfb;
-}
-body #container div#pjax-container #nav .inactive:hover > ul,
-body html #container div#pjax-container #nav .inactive:hover > ul {
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0.25s;
-  list-style: none;
-}
-body #container div#pjax-container #nav .inactive a,
-body html #container div#pjax-container #nav .inactive a {
-  color: #004a80;
-  font-weight: bold;
-}
-body #container div#pjax-container #nav .inactive a li,
-body html #container div#pjax-container #nav .inactive a li {
-  display: block;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: left;
-}
-body #container div#pjax-container #nav .inactive > ul,
-body html #container div#pjax-container #nav .inactive > ul {
-  background: #fbfbfb;
-  margin: 0;
-  padding: 5px 0;
-  left: -1px;
-  z-index: 500;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-radius: 0 0 5px 5px;
-  display: block;
-  -moz-box-shadow: 3px 3px 3px #ccc;
-  -webkit-box-shadow: 3px 3px 3px #ccc;
-  box-shadow: 3px 3px 3px #ccc;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear, opacity 0.1s linear;
-}
-body #container div#pjax-container #nav .inactive li a,
-body html #container div#pjax-container #nav .inactive li a {
-  background-position: 10px 50%;
-  background-repeat: no-repeat;
-  padding: 0 10px 0 34px;
-}
-body #container div#pjax-container #nav .inactive li a:hover,
-body html #container div#pjax-container #nav .inactive li a:hover {
-  color: #e65524;
-  background-color: #fbfbfb;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-body #container div#pjax-container #nav a:hover,
-body #container div#pjax-container #nav #sub_nav a:hover,
-body #container div#pjax-container #nav a:hover i[class^=icon-],
-body #container div#pjax-container #nav .tabs a,
-body html #container div#pjax-container #nav a:hover,
-body html #container div#pjax-container #nav #sub_nav a:hover,
-body html #container div#pjax-container #nav a:hover i[class^=icon-],
-body html #container div#pjax-container #nav .tabs a {
-  text-decoration: none;
-}
-body #container div#pjax-container #nav > li + li,
-body html #container div#pjax-container #nav > li + li {
-  margin-left: 8px;
-}
-body #container div#pjax-container #nav,
-body #container div#pjax-container #sub_nav,
-body html #container div#pjax-container #nav,
-body html #container div#pjax-container #sub_nav {
-  clear: both;
-  margin: 0;
-  padding: 0 20px;
-  line-height: 26px;
-  border-left: 1px solid #aaa;
-  border-right: 1px solid #aaa;
-  white-space: nowrap;
-}
-body #container div#pjax-container #nav li.active,
-body #container div#pjax-container #nav li.inactive:hover,
-body html #container div#pjax-container #nav li.active,
-body html #container div#pjax-container #nav li.inactive:hover {
-  box-shadow: 4px -3px 6px -3px rgba(0, 0, 0, 0.3);
-  border-color: #c5d9ec;
-}
-body #container div#pjax-container nav,
-body html #container div#pjax-container nav {
-  padding: 0;
-  margin: 0;
-  /***************************************
-  Overflow Menu
-  ****************************************/
-  /*** Overflow navigation ***/
-}
-body #container div#pjax-container nav .jb-overflowmenu,
-body html #container div#pjax-container nav .jb-overflowmenu {
-  height: 35px;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  /*holds the overflow menu and label*/
-  /******** Overflow menu and Dropdown *********/
-}
-body #container div#pjax-container nav .jb-overflowmenu .placeholder,
-body html #container div#pjax-container nav .jb-overflowmenu .placeholder {
-  visibility: hidden;
-}
-body #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-helper-postion,
-body html #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-helper-postion {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0px;
-  overflow: visible;
-}
-body #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-menu-primary,
-body html #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-menu-primary {
-  padding: 0;
-  margin: 2px 0 0 0;
-  height: 30px !important;
-}
-body #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-menu-primary li.item,
-body html #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-menu-primary li.item {
-  display: inline-block;
-  padding: 6px 0px;
-  margin: 0 0px;
-}
-body #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-menu-primary li.item > a,
-body html #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-menu-primary li.item > a {
-  padding: 4px 10px;
-}
-body #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-container,
-body html #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-container {
-  left: auto;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  border-bottom: 1px solid #bebebe;
-  border-left: 1px solid #bebebe;
-  background-color: #eee;
-}
-body #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-menu-secondary-handle,
-body html #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-menu-secondary-handle {
-  text-align: center;
-  padding: 5px;
-  line-height: 15px;
-  color: #666;
-}
-body #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-container > a.jb-overflowmenu-menu-secondary-handle,
-body html #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-container > a.jb-overflowmenu-menu-secondary-handle {
-  color: #666;
-  padding: 9px;
-  background-color: #eee;
-  border-right: 1px solid #aaa;
-}
-body #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-container > a.jb-overflowmenu-menu-secondary-handle:hove,
-body html #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-container > a.jb-overflowmenu-menu-secondary-handle:hove {
-  color: #000;
-  background-color: #ddd;
-}
-body #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-menu-secondary,
-body html #container div#pjax-container nav .jb-overflowmenu .jb-overflowmenu-menu-secondary {
-  top: auto;
-  bottom: auto;
-  left: auto;
-  display: none;
-  position: absolute;
-  z-index: 9;
-  padding: 0;
-  margin: 0;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary {
-  background-color: #f7f7f7;
-  border: 1px solid #bebebe;
-  padding: 5px 0;
-  /*** Overflow Dropdown ***/
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item {
-  position: relative;
-  padding: 0px 10px;
-  display: inline-block;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  border-bottom: 1px solid #bebebe;
-  white-space: nowrap;
-  list-style: none;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item:before,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item:before {
-  font-family: "FontAwesome";
-  content: "\f0d9";
-  padding: 5px;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item a > i,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item a > i {
-  margin-top: 5px;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item:hover,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item:hover {
-  padding: 0 10px;
-  color: #e65524;
-  background-color: #fff;
-  border-left: none;
-  border-top: none;
-  border-right: none;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item:hover > a,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item:hover > a {
-  color: #e65524;
-  text-decoration: none;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown {
-  border-top-left-radius: 6px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 6px;
-  border: solid 1px #ddd;
-  border: solid 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  padding: 12px 0;
-  background: #fff;
-  font-size: 0.95em;
-  list-style: none;
-  left: -247px;
-  top: -1px;
-  position: absolute;
-  z-index: 10;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ {
-  margin-top: 2px;
-  float: left;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ .manageQ,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ .manageQ {
-  display: none;
-  position: absolute;
-  z-index: 20;
-  top: 0;
-  left: 0px;
-  padding: 34px 28px;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ .manageQ ul,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ .manageQ ul {
-  border: 1px solid #ddd;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  padding: 6px 0;
-  background-color: #fff;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ:hover .manageQ,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary li.item div.customQ-dropdown ul li > .controlQ div.editQ:hover .manageQ {
-  display: block;
-}
-body #container div#pjax-container nav .jb-overflowmenu-menu-secondary .customQ-dropdown li > span,
-body html #container div#pjax-container nav .jb-overflowmenu-menu-secondary .customQ-dropdown li > span {
-  padding: 0 5px;
-}
-body #container div#pjax-container nav #sub_nav,
-body html #container div#pjax-container nav #sub_nav {
-  background: #f7f7f7;
-  border-bottom: 1px solid #bebebe;
-  padding: 2px 20px;
-  display: flex;
-  align-content: center;
-  width: 100%;
-}
-body #container div#pjax-container nav #sub_nav a.active, body #container div#pjax-container nav #sub_nav li.active > a, body #container div#pjax-container nav #sub_nav li.child.active > a #customQ_nav .jb-overflowmenu-menu-primary li.item > a.active,
-body html #container div#pjax-container nav #sub_nav a.active,
-body html #container div#pjax-container nav #sub_nav li.active > a,
-body html #container div#pjax-container nav #sub_nav li.child.active > a #customQ_nav .jb-overflowmenu-menu-primary li.item > a.active {
-  font-weight: bold;
-}
-body #container div#pjax-container nav #sub_nav > li + li > a,
-body html #container div#pjax-container nav #sub_nav > li + li > a {
-  margin-left: 10px;
-}
-body #container div#pjax-container nav #sub_nav li a,
-body html #container div#pjax-container nav #sub_nav li a {
-  margin-left: 10px;
-}
-body #container div#pjax-container nav #sub_nav li.child.active > a,
-body html #container div#pjax-container nav #sub_nav li.child.active > a {
-  font-weight: 500;
-}
-body #container div#pjax-container nav #sub_nav .open,
-body html #container div#pjax-container nav #sub_nav .open {
-  background-image: url(../images/icons/open.gif);
-}
-body #container div#pjax-container nav #sub_nav .answered,
-body html #container div#pjax-container nav #sub_nav .answered {
-  background-image: url(../images/icons/answered.gif);
-}
-body #container div#pjax-container nav #sub_nav .mine,
-body html #container div#pjax-container nav #sub_nav .mine {
-  background-image: url(../images/icons/mine.gif);
-}
-body #container div#pjax-container nav #sub_nav .closed,
-body html #container div#pjax-container nav #sub_nav .closed {
-  background-image: url(../images/icons/closed.gif);
-}
-body #container div#pjax-container nav #sub_nav .search,
-body html #container div#pjax-container nav #sub_nav .search {
-  background-image: url(../images/icons/search.gif);
-}
-body #container div#pjax-container nav #sub_nav .new,
-body html #container div#pjax-container nav #sub_nav .new {
-  background-image: url(../images/icons/new.gif);
-}
-body #container div#pjax-container div#content .icon-bar,
-body html #container div#pjax-container div#content .icon-bar {
-  margin-bottom: 20px;
-  padding-top: 5px;
-}
-body #container div#pjax-container div#content .icon-bar .sticky.bar.opaque .content,
-body html #container div#pjax-container div#content .icon-bar .sticky.bar.opaque .content {
-  width: 100%;
-}
-body #sub_nav > li > a,
-body #customQ_nav .jb-overflowmenu-menu-primary li.item > a,
-body html #sub_nav > li > a,
-body html #customQ_nav .jb-overflowmenu-menu-primary li.item > a {
-  display: inline-block;
-  padding: 5px 10px 5px 21px;
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  color: #000;
 }
 body .link,
 body a,
