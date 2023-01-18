@@ -1682,7 +1682,7 @@ progress {
   background-color: #fff;
   border-color: #86b7fe;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 0.25rem #f3811c;
 }
 .form-control::-webkit-date-and-time-value {
   height: 1.5em;
@@ -3674,6 +3674,7 @@ body {
 #ticketForm div label,
 #clientLogin div label {
   float: left;
+  margin-bottom: 10px;
 }
 
 #ticketForm div label.required,
@@ -3688,10 +3689,10 @@ body {
 #clientLogin div textarea {
   width: 100%;
   border: 1px solid #aaa;
-  background: #fff;
   margin-right: 10px;
   display: block;
   float: left;
+  margin-bottom: 10px;
 }
 
 #ticketForm div input[type=file],
@@ -3791,7 +3792,6 @@ body {
   font-size: 11px;
   color: #d00;
   display: block;
-  padding-left: 140px;
 }
 
 #clientLogin #email {
@@ -4049,6 +4049,9 @@ a.refresh {
 .login-box label[for=ticketno] {
   display: flex;
   flex-direction: column;
+}
+.login-box input {
+  margin-bottom: 10px;
 }
 
 .lock-icon {
