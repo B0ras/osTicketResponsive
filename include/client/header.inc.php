@@ -138,7 +138,9 @@ if (osTicket::is_ie())
                         <?php
                         } elseif ($nav) {
                             if ($cfg->getClientRegistrationMode() == 'public') { ?>
-                                <?php echo __('Guest User'); ?> | <?php
+                                <text class="guest-user">
+                                    <?php echo __('Guest User'); ?>
+                                </text> <?php
                             }
                             if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
                                 <a href="<?php echo $signout_url; ?>">
@@ -146,8 +148,9 @@ if (osTicket::is_ie())
                                 </a>
                             <?php
                             } elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
-                                <a href="<?php echo $signin_url; ?>">
+                                <a class="btn btn-orange signin-button" href="<?php echo $signin_url; ?>">
                                     <?php echo __('Sign In'); ?>
+                                    <i class="icon-user"></i>
                                 </a>
                             <?php
                             }
