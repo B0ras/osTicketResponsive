@@ -65,7 +65,8 @@ else
                 }
             } ?>
             <div class="lock-icon">
-                <i class="icon-lock"></i>
+                <!-- <i class="icon-lock"></i> -->
+                <img class="lock-icon" src="assets/default/images/lock.png?1319655200" alt="">
             </div>
         </div>
     </div>
