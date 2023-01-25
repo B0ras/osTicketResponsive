@@ -7,18 +7,20 @@
     <?php
     if (!isset($info['lookup']) || $info['lookup'] !== false) { ?>
         <div>
-            <p id="msg_info"><i class="icon-info-sign"></i>&nbsp; <?php echo
-                $thisstaff->hasPerm(User::PERM_CREATE)
-                ? __('Search existing users or add a new user.')
-                : __('Search existing users.');
-            ?></p>
+            <p id="msg_info"><i class="icon-info-sign"></i>&nbsp;
+                <?php echo
+                    $thisstaff->hasPerm(User::PERM_CREATE)
+                    ? __('Search existing users or add a new user.')
+                    : __('Search existing users.');
+                ?>
+            </p>
         </div>
         <div style="margin-bottom:10px;">
             <input type="text" class="search-input" style="width:100%;"
-                placeholder="<?php echo __('Search by email, phone or name'); ?>" id="user-search" autofocus
-                autocorrect="off" autocomplete="off" />
+                placeholder="<?php echo __('Search by email, phone or name'); ?>" id="user-search" autocorrect="off"
+                autocomplete="off" />
         </div>
-        <?php
+    <?php
     }
 
     if ($info['error']) {
@@ -36,17 +38,17 @@
                 <div class="avatar pull-left" style="margin: 0 10px;">
                     <?php echo $user->getAvatar(); ?>
                 </div>
-                <?php
+            <?php
             } else { ?>
                 <i class="icon-user icon-4x pull-left icon-border"></i>
-                <?php
+            <?php
             }
             if ($thisstaff->hasPerm(User::PERM_CREATE)) { ?>
                 <a class="action-button pull-right" style="overflow:inherit" id="unselect-user" href="#"><i
                         class="icon-remove"></i>
                     <?php echo __('Add New User'); ?>
                 </a>
-                <?php }
+            <?php }
             if ($user) { ?>
                 <div><strong id="user-name">
                         <?php echo Format::htmlchars($user->getName()->getOriginal()); ?>
@@ -59,7 +61,7 @@
                     <div><span id="user-org">
                             <?php echo $org->getName(); ?>
                         </span></div>
-                    <?php
+                <?php
                 } ?>
                 <table style="margin-top: 1em;">
                     <?php foreach ($user->getDynamicData() as $entry) { ?>
@@ -75,13 +77,15 @@
                                     <?php echo Format::htmlchars($a->getField()->get('label'));
                                     ?>:
                                 </td>
-                                <td style="border-bottom: 1px dotted #ccc"><?php echo $a->display(); ?></td>
+                                <td style="border-bottom: 1px dotted #ccc">
+                                    <?php echo $a->display(); ?>
+                                </td>
                             </tr>
-                            <?php }
-                            }
-                            ?>
+                        <?php }
+                    }
+                    ?>
                 </table>
-                <?php } ?>
+            <?php } ?>
             <div class="clear"></div>
             <hr>
             <p class="full-width">
@@ -115,7 +119,7 @@
                     </span>
                 </p>
             </form>
-            <?php } else { ?>
+        <?php } else { ?>
             <hr />
             <p class="full-width">
                 <span class="buttons pull-left">
@@ -123,7 +127,7 @@
                         value="<?php echo __('Cancel'); ?>">
                 </span>
             </p>
-            <?php } ?>
+        <?php } ?>
     </div>
     <div class="clear"></div>
 </div>
@@ -135,7 +139,7 @@
                 if (last_req) last_req.abort();
                 last_req = $.ajax({
                     url: "ajax.php/users<?php
-                    echo $info['lookup'] ? "/{$info['lookup']}" : '' ?>?q="+query,
+                    echo $info['lookup'] ? "/{$info['lookup']}" : '' ?> ? q = "+query,
                 dataType: 'json',
                     success: function (data) {
                         typeahead.process(data);
