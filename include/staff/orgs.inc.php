@@ -15,7 +15,8 @@ if ($_REQUEST['query']) {
             'name__contains' => $search,
             // TODO: Add search for cdata
         )
-    ));
+    )
+    );
     $qs += array('query' => $_REQUEST['query']);
 }
 
@@ -66,7 +67,7 @@ $orgs->order_by($order . $order_column);
             <?php csrf_token(); ?>
             <div class="attached input">
                 <input type="hidden" name="a" value="search">
-                <input type="search" class="basic-search" id="basic-org-search" name="query" autofocus size="30"
+                <input type="search" class="basic-search" id="basic-org-search" name="query" size="30"
                     value="<?php echo Format::htmlchars($_REQUEST['query']); ?>" autocomplete="off" autocorrect="off"
                     autocapitalize="off">
                 <button type="submit" class="attached button"><i class="icon-search"></i>
@@ -162,11 +163,15 @@ else
                                 <?php
                                 echo $org['name']; ?>
                             </a> </td>
-                        <td>&nbsp;<?php echo $org['user_count']; ?></td>
+                        <td>&nbsp;
+                            <?php echo $org['user_count']; ?>
+                        </td>
                         <td>
                             <?php echo Format::date($org['created']); ?>
                         </td>
-                        <td><?php echo Format::datetime($org['updated']); ?>&nbsp;</td>
+                        <td>
+                            <?php echo Format::datetime($org['updated']); ?>&nbsp;
+                        </td>
                     </tr>
                 <?php
                 }

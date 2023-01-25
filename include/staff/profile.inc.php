@@ -57,7 +57,7 @@ if (!defined('OSTSTAFFINC') || !$staff || !$thisstaff)
                 <tr>
                   <td class="required"><?php echo __('Name'); ?>:</td>
                   <td>
-                    <input type="text" size="20" maxlength="64" style="width: 145px" name="firstname" autofocus
+                    <input type="text" size="20" maxlength="64" style="width: 145px" name="firstname"
                       value="<?php echo Format::htmlchars($staff->firstname); ?>"
                       placeholder="<?php echo __("First Name"); ?>" />
                     <input type="text" size="20" maxlength="64" style="width: 145px" name="lastname"

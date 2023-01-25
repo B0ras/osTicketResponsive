@@ -14,17 +14,17 @@ if ($_REQUEST['a'] == 'add') {
     // Set some default permissions
     $staff->updatePerms(
       array(
-          User::PERM_CREATE,
-          User::PERM_EDIT,
-          User::PERM_DELETE,
-          User::PERM_MANAGE,
-          User::PERM_DIRECTORY,
-          Organization::PERM_CREATE,
-          Organization::PERM_EDIT,
-          Organization::PERM_DELETE,
-          FAQ::PERM_MANAGE,
-          Dept::PERM_DEPT,
-          Staff::PERM_STAFF,
+        User::PERM_CREATE,
+        User::PERM_EDIT,
+        User::PERM_DELETE,
+        User::PERM_MANAGE,
+        User::PERM_DIRECTORY,
+        Organization::PERM_CREATE,
+        Organization::PERM_EDIT,
+        Organization::PERM_DELETE,
+        FAQ::PERM_MANAGE,
+        Dept::PERM_DEPT,
+        Staff::PERM_STAFF,
       )
     );
   }
@@ -52,19 +52,25 @@ $extras = new ArrayObject();
   <h2>
     <?php echo $title; ?>
     <?php if (isset($staff->staff_id)) { ?><small>
-        — <?php echo $staff->getName(); ?></small>
-      <?php } ?>
+        —
+        <?php echo $staff->getName(); ?>
+      </small>
+    <?php } ?>
   </h2>
 
   <ul class="clean tabs">
     <li class="active"><a href="#account"><i class="icon-user"></i>
         <?php echo __('Account'); ?>
       </a></li>
-    <li><a href="#access"><?php echo __('Access'); ?></a></li>
+    <li><a href="#access">
+        <?php echo __('Access'); ?>
+      </a></li>
     <li><a href="#permissions">
         <?php echo __('Permissions'); ?>
       </a></li>
-    <li><a href="#teams"><?php echo __('Teams'); ?></a></li>
+    <li><a href="#teams">
+        <?php echo __('Teams'); ?>
+      </a></li>
     <?php Signal::send('agenttab.audit', $staff, $extras); ?>
   </ul>
 
@@ -79,10 +85,12 @@ $extras = new ArrayObject();
               </div>
               <table class="table two-column" border="0" cellspacing="2" cellpadding="2" style="width: 760px">
                 <tr>
-                  <td class="required"><?php echo __('Name'); ?>:</td>
+                  <td class="required">
+                    <?php echo __('Name'); ?>:
+                  </td>
                   <td>
                     <input type="text" size="20" maxlength="64" style="width: 145px" name="firstname" class="auto first"
-                      autofocus value="<?php echo Format::htmlchars($staff->firstname); ?>"
+                      value="<?php echo Format::htmlchars($staff->firstname); ?>"
                       placeholder="<?php echo __("First Name"); ?>" />
                     <input type="text" size="20" maxlength="64" style="width: 145px" name="lastname" class="auto last"
                       value="<?php echo Format::htmlchars($staff->lastname); ?>"
@@ -151,7 +159,8 @@ $extras = new ArrayObject();
           </th>
         </tr>
         <tr>
-          <td class="required"><?php echo __('Username'); ?>:
+          <td class="required">
+            <?php echo __('Username'); ?>:
             <span class="error">*</span>
           </td>
           <td>
@@ -159,11 +168,11 @@ $extras = new ArrayObject();
               value="<?php echo Format::htmlchars($staff->username); ?>" />
             <?php if (!($bk = $staff->getAuthBackend()) || $bk->supportsPasswordChange()) { ?>
               <button type="button" class="action-button" onclick="javascript:
-              $.dialog('ajax.php/staff/'+<?php echo $info['id'] ?: '0'; ?>+'/set-password', 201);">
+                  $.dialog('ajax.php/staff/'+<?php echo $info['id'] ?: '0'; ?>+'/set-password', 201);">
                 <i class="icon-refresh"></i>
                 <?php echo __('Set Password'); ?>
               </button>
-              <?php } ?>
+            <?php } ?>
             <i class="offset help-tip icon-question-sign" href="#username"></i>
             <div class="error">
               <?php echo $errors['username']; ?>
@@ -179,25 +188,27 @@ $extras = new ArrayObject();
             </td>
             <td>
               <select name="backend" id="backend-selection" style="width:300px" onchange="javascript:
-                  if (this.value != '' && this.value != 'local')
-                      $('#password-fields').hide();
-                  else if (!$('#welcome-email').is(':checked'))
-                      $('#password-fields').show();
-                  ">
-                <option value="">&mdash; <?php echo __('Use any available backend'); ?> &mdash;</option>
+                      if (this.value != '' && this.value != 'local')
+                          $('#password-fields').hide();
+                      else if (!$('#welcome-email').is(':checked'))
+                          $('#password-fields').show();
+                      ">
+                <option value="">&mdash;
+                  <?php echo __('Use any available backend'); ?> &mdash;
+                </option>
                 <?php foreach ($bks as $ab) {
-                $id = $ab->getBkId(); ?>
+                  $id = $ab->getBkId(); ?>
                   <option value="<?php echo $id; ?>" <?php
                      if ($staff->backend == $id)
                        echo 'selected="selected"'; ?>>
                     <?php
                     echo $ab->getName(); ?>
                   </option>
-                  <?php } ?>
+                <?php } ?>
               </select>
             </td>
           </tr>
-          <?php
+        <?php
         } ?>
         <?php
         if ($bks = Staff2FABackend::allRegistered() && $current = $staff->get2FABackend()) {
@@ -212,24 +223,24 @@ $extras = new ArrayObject();
                 value="<?php echo $current->getName(); ?>" />
               &nbsp;
               <button type="button" id="reset-2fa" class="action-button" onclick="javascript:
-                  if (confirm('<?php echo __('You sure?'); ?>')) {
-                      $.ajax({
-                          url: 'ajax.php/staff/'+<?php echo $staff->getId(); ?>+'/reset-2fa',
-                          type: 'POST',
-                          data: {'staffId':<?php echo $staff->getId(); ?>},
-                          success: function(data) {
-                              location.reload();
-                          }
-                      });
-                  }
-                  return false;">
+                      if (confirm('<?php echo __('You sure?'); ?>')) {
+                          $.ajax({
+                              url: 'ajax.php/staff/'+<?php echo $staff->getId(); ?>+'/reset-2fa',
+                              type: 'POST',
+                              data: {'staffId':<?php echo $staff->getId(); ?>},
+                              success: function(data) {
+                                  location.reload();
+                              }
+                          });
+                      }
+                      return false;">
                 <i class="icon-gear"></i>
                 <?php echo __('Reset 2FA'); ?>
               </button>
               <i class="offset help-tip icon-question-sign" href="#reset2fa"></i>
             </td>
           </tr>
-          <?php
+        <?php
         } ?>
       </tbody>
       <!-- ================================================ -->
@@ -241,7 +252,9 @@ $extras = new ArrayObject();
         </tr>
         <tr>
           <td colspan="2">
-            <div class="error"><?php echo $errors['isadmin']; ?></div>
+            <div class="error">
+              <?php echo $errors['isadmin']; ?>
+            </div>
             <div class="error">
               <?php echo $errors['isactive']; ?>
             </div>
@@ -286,9 +299,10 @@ $extras = new ArrayObject();
         <tr class="header">
           <th colspan="3">
             <?php echo __('Access'); ?>
-            <div><small><?php echo __(
-              "Select the departments the agent is allowed to access and the corresponding effective role."
-            ); ?>
+            <div><small>
+                <?php echo __(
+                  "Select the departments the agent is allowed to access and the corresponding effective role."
+                ); ?>
               </small></div><br>
             <div>
               <?php echo __('Primary Department'); ?> <span class="error">*</span>
@@ -298,7 +312,9 @@ $extras = new ArrayObject();
         <tr>
           <td style="vertical-align:top">
             <select name="dept_id" id="dept_id" data-quick-add="department">
-              <option value="0">&mdash; <?php echo __('Select Department'); ?> &mdash;</option>
+              <option value="0">&mdash;
+                <?php echo __('Select Department'); ?> &mdash;
+              </option>
               <?php
               if ($depts = Dept::getDepartments(array('activeonly' => true, 'publiconly' => true))) {
                 if ($staff->dept_id && !array_key_exists($staff->dept_id, $depts)) {
@@ -311,7 +327,9 @@ $extras = new ArrayObject();
                 }
               }
               ?>
-              <option value="0" data-quick-add>&mdash; <?php echo __('Add New'); ?> &mdash;</option>
+              <option value="0" data-quick-add>&mdash;
+                <?php echo __('Add New'); ?> &mdash;
+              </option>
             </select>
             <i class="offset help-tip icon-question-sign" href="#primary_department"></i>
             <div class="error">
@@ -319,19 +337,25 @@ $extras = new ArrayObject();
             </div>
             <?php
             if ($warn) { ?>
-              &nbsp;<span class="error">*&nbsp;<?php echo $warn; ?></span>
-              <?php } ?>
+              &nbsp;<span class="error">*&nbsp;
+                <?php echo $warn; ?>
+              </span>
+            <?php } ?>
           </td>
           <td style="vertical-align:top">
             <select name="role_id" data-quick-add="role">
-              <option value="0">&mdash; <?php echo __('Select Role'); ?> &mdash;</option>
+              <option value="0">&mdash;
+                <?php echo __('Select Role'); ?> &mdash;
+              </option>
               <?php
               foreach (Role::getRoles() as $id => $name) {
                 $sel = ($staff->role_id == $id) ? 'selected="selected"' : '';
                 echo sprintf('<option value="%d" %s>%s</option>', $id, $sel, $name);
               }
               ?>
-              <option value="0" data-quick-add>&mdash; <?php echo __('Add New'); ?> &mdash;</option>
+              <option value="0" data-quick-add>&mdash;
+                <?php echo __('Add New'); ?> &mdash;
+              </option>
             </select>
             <i class="offset help-tip icon-question-sign" href="#primary_role"></i>
             <div class="error">
@@ -357,13 +381,17 @@ $extras = new ArrayObject();
           </td>
           <td>
             <select data-name="dept_access_role" data-quick-add="role">
-              <option value="0">&mdash; <?php echo __('Select Role'); ?> &mdash;</option>
+              <option value="0">&mdash;
+                <?php echo __('Select Role'); ?> &mdash;
+              </option>
               <?php
               foreach (Role::getRoles() as $id => $name) {
                 echo sprintf('<option value="%d" %s>%s</option>', $id, $sel, $name);
               }
               ?>
-              <option value="0" data-quick-add>&mdash; <?php echo __('Add New'); ?> &mdash;</option>
+              <option value="0" data-quick-add>&mdash;
+                <?php echo __('Add New'); ?> &mdash;
+              </option>
             </select>
           </td>
           <td>
@@ -392,13 +420,17 @@ $extras = new ArrayObject();
           <td colspan="2">
             <i class="icon-plus-sign"></i>
             <select id="add_access" data-quick-add="department">
-              <option value="0">&mdash; <?php echo __('Select Department'); ?> &mdash;</option>
+              <option value="0">&mdash;
+                <?php echo __('Select Department'); ?> &mdash;
+              </option>
               <?php
               foreach ($depts as $id => $name) {
                 echo sprintf('<option value="%d">%s</option>', $id, Format::htmlchars($name));
               }
               ?>
-              <option value="0" data-quick-add>&mdash; <?php echo __('Add New'); ?> &mdash;</option>
+              <option value="0" data-quick-add>&mdash;
+                <?php echo __('Add New'); ?> &mdash;
+              </option>
             </select>
             <button type="button" class="green button">
               <?php echo __('Add'); ?>
@@ -429,24 +461,24 @@ $extras = new ArrayObject();
       $first = true;
       foreach ($permissions as $g => $perms) { ?>
         <li <?php if ($first) {
-        echo 'class="active"';
-        $first = false;
-      } ?>>
+          echo 'class="active"';
+          $first = false;
+        } ?>>
           <a href="#<?php echo Format::slugify($g); ?>">
             <?php echo Format::htmlchars(__($g)); ?>
           </a>
         </li>
-        <?php } ?>
+      <?php } ?>
     </ul>
     <?php
     $first = true;
     foreach ($permissions as $g => $perms) { ?>
       <div class="tab_content <?php if (!$first) {
-      echo 'hidden';
-    } else {
-      $first = false;
-    }
-    ?>" id="<?php echo Format::slugify($g); ?>">
+        echo 'hidden';
+      } else {
+        $first = false;
+      }
+      ?>" id="<?php echo Format::slugify($g); ?>">
         <table class="table">
           <?php foreach ($perms as $k => $v) { ?>
             <tr>
@@ -467,10 +499,10 @@ $extras = new ArrayObject();
                 </label>
               </td>
             </tr>
-            <?php } ?>
+          <?php } ?>
         </table>
       </div>
-      <?php } ?>
+    <?php } ?>
   </div>
 
   <!-- ============== TEAM MEMBERSHIP =================== -->
@@ -481,9 +513,10 @@ $extras = new ArrayObject();
         <tr class="header">
           <th colspan="2">
             <?php echo __('Assigned Teams'); ?>
-            <div><small><?php echo __(
-              "Agent will have access to tickets assigned to a team they belong to regardless of the ticket's department. Alerts can be enabled for each associated team."
-            ); ?>
+            <div><small>
+                <?php echo __(
+                  "Agent will have access to tickets assigned to a team they belong to regardless of the ticket's department. Alerts can be enabled for each associated team."
+                ); ?>
               </small></div>
           </th>
         </tr>
@@ -497,13 +530,17 @@ $extras = new ArrayObject();
           <td colspan="2">
             <i class="icon-plus-sign"></i>
             <select id="add_team" data-quick-add="team">
-              <option value="0">&mdash; <?php echo __('Select Team'); ?> &mdash;</option>
+              <option value="0">&mdash;
+                <?php echo __('Select Team'); ?> &mdash;
+              </option>
               <?php
               foreach ($teams as $id => $name) {
                 echo sprintf('<option value="%d">%s</option>', $id, Format::htmlchars($name));
               }
               ?>
-              <option value="0" data-quick-add>&mdash; <?php echo __('Add New'); ?> &mdash;</option>
+              <option value="0" data-quick-add>&mdash;
+                <?php echo __('Add New'); ?> &mdash;
+              </option>
             </select>
             <button type="button" class="green button">
               <?php echo __('Add'); ?>
@@ -616,29 +653,29 @@ $extras = new ArrayObject();
   });
 
 
-<?php
-foreach ($staff->dept_access as $dept_access) {
-  if (!$dept_access->dept_id)
-    continue;
+<? php
+foreach($staff -> dept_access as $dept_access) {
+    if (!$dept_access -> dept_id)
+      continue;
   echo sprintf(
-    'addAccess(%d, %s, %d, %d, %s);', $dept_access->dept_id,
-    JsonDataEncoder::encode($dept_access->dept->getName()),
-    $dept_access->role_id,
-    $dept_access->isAlertsEnabled(),
-    JsonDataEncoder::encode(@$errors['dept_access'][$dept_access->dept_id])
+        'addAccess(%d, %s, %d, %d, %s);', $dept_access -> dept_id,
+        JsonDataEncoder:: encode($dept_access -> dept -> getName()),
+        $dept_access -> role_id,
+        $dept_access -> isAlertsEnabled(),
+        JsonDataEncoder:: encode(@$errors['dept_access'][$dept_access -> dept_id])
   );
-}
+  }
 
-foreach ($staff->teams as $member) {
-  if (!$member->team)
-    continue;
+  foreach($staff -> teams as $member) {
+    if (!$member -> team)
+      continue;
   echo sprintf(
-    'joinTeam(%d, %s, %d, %s);', $member->team_id,
-    JsonDataEncoder::encode($member->team->getName()),
-    $member->isAlertsEnabled(),
-    JsonDataEncoder::encode(@$errors['teams'][$member->team_id])
+        'joinTeam(%d, %s, %d, %s);', $member -> team_id,
+        JsonDataEncoder:: encode($member -> team -> getName()),
+        $member -> isAlertsEnabled(),
+        JsonDataEncoder:: encode(@$errors['teams'][$member -> team_id])
   );
-}
+  }
 
 ?>
 </script>

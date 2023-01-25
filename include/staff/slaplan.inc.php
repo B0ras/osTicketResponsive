@@ -29,7 +29,9 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
     <h2>
         <?php echo $title; ?>
         <?php if (isset($info['name'])) { ?><small>
-                — <?php echo $info['name']; ?></small>
+                —
+                <?php echo $info['name']; ?>
+            </small>
         <?php } ?>
     </h2>
 
@@ -50,10 +52,11 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
                         <?php echo __('Name'); ?>:
                     </td>
                     <td>
-                        <input type="text" size="30" name="name" value="<?php echo $info['name']; ?>" autofocus
+                        <input type="text" size="30" name="name" value="<?php echo $info['name']; ?>"
                             data-translate-tag="<?php echo $trans['name']; ?>" />
-                        &nbsp;<span class="error">*&nbsp;<?php echo $errors['name']; ?></span>&nbsp;<i
-                            class="help-tip icon-question-sign" href="#name"></i>
+                        &nbsp;<span class="error">*&nbsp;
+                            <?php echo $errors['name']; ?>
+                        </span>&nbsp;<i class="help-tip icon-question-sign" href="#name"></i>
                     </td>
                 </tr>
                 <tr>
@@ -66,7 +69,9 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
                         </strong>
                         <input type="radio" name="isactive" value="0" <?php echo !$info['isactive'] ? 'checked="checked"' : ''; ?>>
                         <?php echo __('Disabled'); ?>
-                        &nbsp;<span class="error">*&nbsp;<?php echo $errors['isactive']; ?></span>
+                        &nbsp;<span class="error">*&nbsp;
+                            <?php echo $errors['isactive']; ?>
+                        </span>
                     </td>
                 </tr>
                 <tr>
@@ -75,9 +80,12 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
                     </td>
                     <td>
                         <input type="text" size="10" name="grace_period" value="<?php echo $info['grace_period']; ?>">
-                        <em>( <?php echo __('in hours'); ?> )</em>
-                        &nbsp;<span class="error">*&nbsp;<?php echo $errors['grace_period']; ?></span>&nbsp;<i
-                            class="help-tip icon-question-sign" href="#grace_period"></i>
+                        <em>(
+                            <?php echo __('in hours'); ?> )
+                        </em>
+                        &nbsp;<span class="error">*&nbsp;
+                            <?php echo $errors['grace_period']; ?>
+                        </span>&nbsp;<i class="help-tip icon-question-sign" href="#grace_period"></i>
                     </td>
                 </tr>
                 <tr>
@@ -86,8 +94,10 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
                     </td>
                     <td>
                         <select name="schedule_id">
-                            <option value="0" selected="selected">&mdash; <?php
-                            echo __('System Default'); ?> &mdash;</option>
+                            <option value="0" selected="selected">&mdash;
+                                <?php
+                                echo __('System Default'); ?> &mdash;
+                            </option>
                             <?php
                             if ($schedules = BusinessHoursSchedule::getSchedules()) {
                                 foreach ($schedules as $s) {
@@ -99,7 +109,9 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
                             }
                             ?>
                         </select>
-                        &nbsp;<font class="error">&nbsp;<?php echo $errors['schedule_id']; ?></font>
+                        &nbsp;<font class="error">&nbsp;
+                            <?php echo $errors['schedule_id']; ?>
+                        </font>
                         <i class="help-tip icon-question-sign" href="#schedule"></i>
                     </td>
                 </tr>
@@ -129,7 +141,8 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
                     <th colspan="2">
                         <em><strong>
                                 <?php echo __('Internal Notes'); ?>
-                            </strong>: <?php echo __("Be liberal, they're internal"); ?>
+                            </strong>:
+                            <?php echo __("Be liberal, they're internal"); ?>
                         </em>
                     </th>
                 </tr>
@@ -146,6 +159,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
     <p style="text-align:center;">
         <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
         <input type="reset" name="reset" value="<?php echo __('Reset'); ?>">
-        <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick='window.location.href="slas.php"'>
+        <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
+            onclick='window.location.href="slas.php"'>
     </p>
 </form>

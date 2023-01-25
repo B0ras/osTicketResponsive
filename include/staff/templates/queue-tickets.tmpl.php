@@ -151,8 +151,8 @@ return false;">
         <input type="hidden" name="search-type" value="" />
         <div class="attached input-group">
             <input type="text" class="basic-search form-control" data-url="ajax.php/tickets/lookup" name="query"
-                autofocus size="30" value="<?php echo Format::htmlchars($_REQUEST['query'] ?? null, true); ?>"
-                autocomplete="off" autocorrect="off" autocapitalize="off" aria-describedby="search-button">
+                size="30" value="<?php echo Format::htmlchars($_REQUEST['query'] ?? null, true); ?>" autocomplete="off"
+                autocorrect="off" autocapitalize="off" aria-describedby="search-button">
             <button type="submit" class="attached button" id="search-button">
                 <i class="icon-search"></i>
             </button>
@@ -211,7 +211,7 @@ return false;">
                                     <?php echo __('Delete'); ?>
                                 </a>
                             </li>
-                            <?php } ?>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
@@ -292,7 +292,7 @@ return false;">
                 <tr>
                     <td colspan="<?php echo count($columns) + 1; ?>">
                         <?php if ($count && $canManageTickets) {
-                        echo __('Select'); ?>:&nbsp;
+                            echo __('Select'); ?>:&nbsp;
                             <a id="selectAll" href="#ckb">
                                 <?php echo __('All'); ?>
                             </a>&nbsp;&nbsp;
@@ -302,11 +302,11 @@ return false;">
                             <a id="selectToggle" href="#ckb">
                                 <?php echo __('Toggle'); ?>
                             </a>&nbsp;&nbsp;
-                            <?php } else {
-                        echo '<i>';
-                        echo $ferror ? Format::htmlchars($ferror) : __('Query returned 0 results.');
-                        echo '</i>';
-                    } ?>
+                        <?php } else {
+                            echo '<i>';
+                            echo $ferror ? Format::htmlchars($ferror) : __('Query returned 0 results.');
+                            echo '</i>';
+                        } ?>
                     </td>
                 </tr>
             </tfoot>

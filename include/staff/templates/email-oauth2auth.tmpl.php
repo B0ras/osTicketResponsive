@@ -59,7 +59,7 @@ if (isset($errors['err'])) {
             <tr>
                 <td width="180" class="required"><?php echo __('Name'); ?>:</td>
                 <td>
-                    <input size="50" type="text" autofocus
+                    <input size="50" type="text"
                         name="name"
                         value="<?php echo $info['name']; ?>"/>
                     <span class="error">*<br/> <?php echo  $errors['name']; ?></span>

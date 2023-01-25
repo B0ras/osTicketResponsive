@@ -1,6 +1,6 @@
 <?php
-include_once(INCLUDE_DIR.'staff/login.header.php');
-$info = ($_POST && $errors)?Format::htmlchars($_POST):array();
+include_once(INCLUDE_DIR . 'staff/login.header.php');
+$info = ($_POST && $errors) ? Format::htmlchars($_POST) : array();
 
 
 if ($thisstaff && $thisstaff->is2FAPending())
@@ -13,73 +13,86 @@ if ($thisstaff && $thisstaff->is2FAPending())
         <div id="background"></div>
     </div>
     <h1 id="logo"><a href="index.php">
-        <span class="valign-helper"></span>
-        <img src="logo.php?login" alt="osTicket :: <?php echo __('Staff Control Panel');?>" />
-    </a></h1>
-    <h3 id="login-message"><?php echo Format::htmlchars($msg); ?></h3>
-    <div class="banner"><small><?php echo ($content) ? Format::display($content->getLocalBody()) : ''; ?></small></div>
+            <span class="valign-helper"></span>
+            <img src="logo.php?login" alt="osTicket :: <?php echo __('Staff Control Panel'); ?>" />
+        </a></h1>
+    <h3 id="login-message">
+        <?php echo Format::htmlchars($msg); ?>
+    </h3>
+    <div class="banner"><small>
+            <?php echo ($content) ? Format::display($content->getLocalBody()) : ''; ?>
+        </small></div>
     <div id="loading" style="display:none;" class="dialog">
         <h1><i class="icon-spinner icon-spin icon-large"></i>
-        <?php echo __('Verifying');?></h1>
+            <?php echo __('Verifying'); ?>
+        </h1>
     </div>
     <form action="login.php" method="post" id="login" onsubmit="attemptLoginAjax(event)">
         <?php csrf_token();
-        if ($thisstaff
-                &&  $thisstaff->is2FAPending()
-                && ($bk=$thisstaff->get2FABackend())
-                && ($form=$bk->getInputForm($_POST))) {
+        if (
+            $thisstaff
+            && $thisstaff->is2FAPending()
+            && ($bk = $thisstaff->get2FABackend())
+            && ($form = $bk->getInputForm($_POST))
+        ) {
             // Render 2FA input form
             include STAFFINC_DIR . 'templates/dynamic-form-simple.tmpl.php';
             ?>
             <fieldset style="padding-top:10px;">
-            <input type="hidden" name="do" value="2fa">
-            <button class="submit button pull-center" type="submit"
-                name="submit"><i class="icon-signin"></i>
-                <?php echo __('Verify'); ?>
-            </button>
-             </fieldset>
+                <input type="hidden" name="do" value="2fa">
+                <button class="submit button pull-center" type="submit" name="submit"><i class="icon-signin"></i>
+                    <?php echo __('Verify'); ?>
+                </button>
+            </fieldset>
         <?php
         } else { ?>
             <input type="hidden" name="do" value="scplogin">
             <fieldset>
-            <input type="text" name="userid" id="name" value="<?php
+                <input type="text" name="userid" id="name" value="<?php
                 echo $info['userid'] ?? null; ?>" placeholder="<?php echo __('Email or Username'); ?>"
-                autofocus autocorrect="off" autocapitalize="off">
-            <input type="password" name="passwd" id="pass" placeholder="<?php echo __('Password'); ?>" autocorrect="off" autocapitalize="off">
+                    autocorrect="off" autocapitalize="off">
+                <input type="password" name="passwd" id="pass" placeholder="<?php echo __('Password'); ?>" autocorrect="off"
+                    autocapitalize="off">
                 <h3 style="display:inline"><a id="reset-link" class="<?php
-                    if (!$show_reset || !$cfg->allowPasswordReset()) echo 'hidden';
-                    ?>" href="pwreset.php"><?php echo __('Forgot My Password'); ?></a></h3>
-                <button class="submit button pull-right" type="submit"
-                    name="submit"><i class="icon-signin"></i>
+                if (!$show_reset || !$cfg->allowPasswordReset())
+                    echo 'hidden';
+                ?>" href="pwreset.php"><?php echo __('Forgot My Password'); ?></a></h3>
+                <button class="submit button pull-right" type="submit" name="submit"><i class="icon-signin"></i>
                     <?php echo __('Log In'); ?>
                 </button>
             </fieldset>
         <?php
         } ?>
     </form>
-<?php
-if (($bks=StaffAuthenticationBackend::getExternal())) { ?>
-<div class="or">
-    <hr/>
-</div><?php
-    foreach ($bks as $bk) { ?>
-<div class="external-auth"><?php $bk->renderExternalLink(); ?></div><br/><?php
-    }
-} ?>
+    <?php
+    if (($bks = StaffAuthenticationBackend::getExternal())) { ?>
+        <div class="or">
+            <hr />
+        </div>
+        <?php
+        foreach ($bks as $bk) { ?>
+            <div class="external-auth">
+                <?php $bk->renderExternalLink(); ?>
+            </div><br />
+        <?php
+        }
+    } ?>
 
     <div id="company">
         <div class="content">
-            <?php echo __('Copyright'); ?> &copy; <?php echo Format::htmlchars($ost->company) ?: date('Y'); ?>
+            <?php echo __('Copyright'); ?> &copy;
+            <?php echo Format::htmlchars($ost->company) ?: date('Y'); ?>
         </div>
     </div>
 </div>
-<div id="poweredBy"><?php echo __('Powered by'); ?>
+<div id="poweredBy">
+    <?php echo __('Powered by'); ?>
     <a href="http://www.osticket.com" target="_blank">
         <img alt="osTicket" src="images/osticket-grey.png" class="osticket-logo">
     </a>
 </div>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
         if (undefined === window.getComputedStyle(document.documentElement).backgroundBlendMode) {
             document.getElementById('loginBox').style.backgroundColor = 'white';
         }
@@ -87,7 +100,7 @@ if (($bks=StaffAuthenticationBackend::getExternal())) { ?>
 
     function attemptLoginAjax(e) {
         $('#loading').show();
-        var objectifyForm = function(formArray) { //serialize data function
+        var objectifyForm = function (formArray) { //serialize data function
             var returnArray = {};
             for (var i = 0; i < formArray.length; i++) {
                 returnArray[formArray[i]['name']] = formArray[i]['value'];
@@ -131,28 +144,28 @@ if (($bks=StaffAuthenticationBackend::getExternal())) { ?>
             method: 'POST',
             data: data,
             cache: false,
-            success: function(json) {
-                 $('button[type=submit]', form).removeAttr('disabled');
-                if (!typeof(json) === 'object' || !json.status)
+            success: function (json) {
+                $('button[type=submit]', form).removeAttr('disabled');
+                if (!typeof (json) === 'object' || !json.status)
                     return;
                 switch (json.status) {
-                case 401:
-                    if (json && json.redirect)
-                        document.location.href = json.redirect;
-                    if (json && json.message)
-                        $('#login-message').text(json.message)
-                    if (json && json.show_reset)
-                        $('#reset-link').show()
-                    if ($.fn.effect) {
-                        $('#loginBox').effect('shake')
-                    }
-                    // Clear the password field
-                    $('#pass').val('').focus();
-                    break
-                case 302:
-                    if (json && json.redirect)
-                        document.location.href = json.redirect;
-                    break
+                    case 401:
+                        if (json && json.redirect)
+                            document.location.href = json.redirect;
+                        if (json && json.message)
+                            $('#login-message').text(json.message)
+                        if (json && json.show_reset)
+                            $('#reset-link').show()
+                        if ($.fn.effect) {
+                            $('#loginBox').effect('shake')
+                        }
+                        // Clear the password field
+                        $('#pass').val('').focus();
+                        break
+                    case 302:
+                        if (json && json.redirect)
+                            document.location.href = json.redirect;
+                        break
                 }
             },
         });
@@ -161,12 +174,13 @@ if (($bks=StaffAuthenticationBackend::getExternal())) { ?>
         e.stopImmediatePropagation();
         return false;
     }
-    </script>
-    <!--[if IE]>
+</script>
+<!--[if IE]>
     <style>
         #loginBox:after { background-color: white !important; }
     </style>
     <![endif]-->
-    <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-1.13.1.custom.min.js"></script>
+<script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-1.13.1.custom.min.js"></script>
 </body>
+
 </html>
