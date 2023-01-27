@@ -8,7 +8,7 @@ if ($activeMenu > 0 && !isset($subnav[$activeMenu - 1]))
 
 $info = $nav->getSubNavInfo();
 ?>
-<nav class="<?php echo @$info['class']; ?> navbar navbar-expand-sm" id="<?php echo $info['id']; ?>">
+<nav class="jb-overflowmenu <?php echo @$info['class']; ?> navbar navbar-expand-sm" id="<?php echo $info['id']; ?>">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsed_nav"
             aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@ $info = $nav->getSubNavInfo();
                         // continue;
                     }
                     echo sprintf(
-                        '<li><a class="%s" href="%s" title="%s" id="%s" %s>%s</a></li>',
+                        '<li class="row"><a class="%s" href="%s" title="%s" id="%s" %s>%s</a></li>',
                         $class, $item['href'], $item['title'],
                         $id,
                         $attr, $item['desc']

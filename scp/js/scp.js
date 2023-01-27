@@ -524,24 +524,29 @@ var scp_prep = function () {
 
   // Auto fetch queue counts
   $(function () {
+    var fired = false;
 
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    getCounts(fired)
+    // if (window.matchMedia("(hover: none)").matches) {
 
-      // if device is 768px wide or less... 
-      console.log("Device is small");
-      $('i.icon-sort-down').click(getCounts);
+    //   // if device is has touchscreen
+    //   console.log("Device has touchscreen");
+    //   $('i.icon-sort-down').click(() => {
+    //     fired = getCounts(fired)
+    //   });
 
-      return;
-    }
-    console.log("Device is big");
-    $('#customQ_nav li.item').hover(getCounts);
+    //   return;
+    // }
+    // console.log("Device has no touchscreen");
+    // const custom = $('#customQ_nav li.item');
+    // custom.hover(() => {
+    //   fired = getCounts(fired)
+    // });
   });
 };
 
-var fired = false;
-function getCounts() {
-  if (fired) return;
-  fired = true;
+function getCounts(fired) {
+  if (fired) return true;
   $.ajax({
     url: 'ajax.php/queue/counts',
     dataType: 'json',
@@ -553,7 +558,7 @@ function getCounts() {
       });
     }
   });
-
+  return true;
 }
 
 $(document).ready(scp_prep);
@@ -1436,3 +1441,14 @@ $(document).on('click.inline-edit', 'a.inline-edit', function (e) {
 
   return false;
 });
+
+["#selectAll", "#selectNone", "#selectToggle"].forEach((e) => {
+  $(e).click(toggleSelectorClass)
+})
+
+
+function toggleSelectorClass() {
+  const classes = "badge bg-secondary"
+  $(".badge").removeClass(classes)
+  $(this).toggleClass(classes)
+}
