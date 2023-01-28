@@ -21,7 +21,9 @@ This is a modified version of **osTicket** that aims to be responsive, more usab
 <br>
 
 ### Built with
-* [![Next][Next.js]][https://nextjs.org/]
+* ![Jquerry](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
+* ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+* ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&*logoColor=white)
 
 Requirements 
 ------------
