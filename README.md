@@ -115,6 +115,7 @@ sass osTicketResponsive/scss/scp.scss osTicketResponsive/scp/scc/scp_responsive.
 ```properties
 sass osTicketResponsive/scss/theme.scss osTicketResponsive/assets/default/css/theme_responsive.css --style compressed
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contributing
 If you have an idea on how to make the project better it would be a good idea to open up an issue. If you want to make a pull request: 
