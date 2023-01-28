@@ -1,0 +1,274 @@
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+$link-color: #f3811c;
+$success-color: #198754;
+$error-color: #dc3545;
+$header-margin: 20px;
+$input-width: 100%;
+
+$custom-colors: (
+    "custom-color": $link-color,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+// @import "../../node_modules/bootstrap/scss/mixins/border-radius";
+// @import "../../node_modules/bootstrap/scss/mixins/utilities";
+@import "../../node_modules/bootstrap/scss/helpers";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/vendor/rfs";
+@import "../../node_modules/bootstrap/scss/transitions";
+// Forms
+@import "../../node_modules/bootstrap/scss/forms";
+// Utilities
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+// Layout
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/containers";
+// Components
+@import "../../node_modules/bootstrap/scss/accordion";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/alert";
+@import "../../node_modules/bootstrap/scss/popover";
+// Icons
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+
+:root {
+    --bs-btn-hover-color: white !important;
+    --bs-btn-active-color: white !important;
+}
+
+body {
+    background: url("../images/background.jpg?1312906017") top left repeat-x
+        white;
+    // display: flex;
+    // align-content: center;
+
+    div#wizard {
+        // max-width: 90%;
+        width: fit-content;
+        border-radius: 10px;
+        box-shadow: 20px 20px 50px;
+        margin: 10% 10% 10% 10%;
+        background: #fff;
+        border: 1px solid #2a67ac;
+        border-right: 2px solid #2a67ac;
+        border-bottom: 3px solid #2a67ac;
+        overflow: hidden;
+        // Beyond 410px the logo gets very distorted
+        // min-width: 410px;
+        // height: min-content;
+        // padding: 10%;
+        // right: 10%;
+        // height: max-content;
+
+        a {
+            color: $link-color;
+        }
+        #header {
+            width: 100%;
+            margin-top: 10px;
+            .info {
+                margin-left: 10px;
+                font-weight: bold;
+                border-bottom: 1px solid #2a67ac;
+                color: #444;
+                text-align: right;
+                float: right;
+            }
+            #logo {
+                float: left;
+                margin-right: 3em;
+                width: auto;
+                height: 72px;
+            }
+            ul {
+                text-align: right;
+                margin: 0;
+                padding: 0;
+
+                li div a.last {
+                    margin-left: 10px;
+                }
+            }
+            li {
+                margin: 5px 0 0 0;
+            }
+
+            &.flags {
+                text-align: right;
+                margin-top: 5px;
+            }
+        }
+
+        #content {
+            margin-top: 20px;
+            #main {
+                float: left;
+                width: 100%;
+                h2 {
+                    font-size: calc(1.3rem + 0.6vw);
+                    margin: 0 0 10px 0;
+                    padding: 0;
+                }
+                #intro {
+                    padding-bottom: 5px;
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid #aaaaaa;
+                }
+                ul.progress {
+                    list-style-type: none;
+                    padding: 0 0 2px 0;
+                    margin-bottom: 20px;
+                    margin-top: 10px;
+                    li {
+                        &:not(:last-child) {
+                            box-shadow: 0 0 2px grey;
+                            clip-path: inset(1px 2px -5px 2px);
+                            margin-bottom: 5px;
+                        }
+                        i {
+                            margin-right: 5px;
+                            &.yes {
+                                color: $success-color;
+                            }
+                            &.no {
+                                color: $error-color;
+                            }
+                        }
+                    }
+                }
+                #bar {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: 20px;
+
+                    button[type="submit"],
+                    input[type="submit"] {
+                        margin-bottom: 20px;
+                        background-color: $link-color;
+                        border-color: $link-color;
+                    }
+                }
+                // Install Form
+                #install {
+                    width: 100%;
+                    // margin: 0 10% 0 10%;
+
+                    div.input-group,
+                    select {
+                        margin-top: 20px;
+                        // Bootstrap does not let you to change element color on hover so I had to do this
+                        .btn:hover {
+                            .bi-question-circle-fill {
+                                color: white;
+                            }
+                        }
+                        // This prevents the icon from changing to black mid animation
+                        .btn:not(:hover) {
+                            .bi-question-circle-fill {
+                                color: $link-color;
+                            }
+                        }
+                    }
+
+                    div.form-floating {
+                        border-color: rgb(95, 95, 95);
+                        align-items: center;
+                    }
+
+                    label {
+                        color: grey;
+                    }
+
+                    h4 {
+                        margin-bottom: $header-margin;
+                        margin-top: $header-margin;
+                    }
+                    // div {
+                    //     input[type="text"],
+                    //     input[type="password"],
+                    //     input[type="email"],
+                    //     select {
+                    //         margin: 0 15% 0 5%;
+                    //     }
+                    //     label {
+                    //         margin-bottom: 5px;
+                    //         margin-left: 5%;
+                    //         padding: 0;
+                    //     }
+                    //     .form-floating {
+                    //         label {
+                    //             margin-left: 40px;
+                    //             padding: ;
+                    //         }
+                    //     }
+                    // }
+                }
+                .alert {
+                    width: $input-width;
+                    margin-top: 5px;
+                }
+                .error {
+                    color: red;
+                    padding: 0;
+                    text {
+                        margin-left: 10px;
+                    }
+                }
+            }
+            #loading {
+                padding: 10px 10px 10px 60px;
+                width: 400px;
+                height: 150px;
+                background: url("../images/ajax-loader.gif?1312925608") 10px 50%
+                    no-repeat white;
+                position: fixed;
+                display: none;
+                z-index: 3000;
+
+                h4 {
+                    margin: 3px 0 0 0;
+                    padding: 0;
+                    color: #d80;
+                }
+            }
+            #overlay {
+                display: none;
+                position: fixed;
+                background: #000;
+                z-index: 2000;
+            }
+            .step2 {
+                h1 {
+                    margin-bottom: $header-margin;
+                }
+            }
+        }
+
+        &.clear {
+            height: 1px;
+        }
+    }
+    #sidebar {
+        h3 {
+            line-height: 0.85em;
+        }
+    }
+    #footer {
+        text-align: center;
+        color: #ccc;
+        a {
+            text-decoration: none;
+            color: #ccc;
+        }
+    }
+
+    .underline {
+        margin-bottom: 10px;
+        text-decoration: underline;
+    }
+}

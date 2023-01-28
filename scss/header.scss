@@ -1,0 +1,31 @@
+div#header {
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    background-color: rgb(248, 248, 248);
+    box-shadow: inset 0 -10px 8px -5px rgba(0, 0, 0, 0.1);
+    padding: 0 5% 0 5%;
+    height: fit-content;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #aaa;
+    // Prevent Bootstrap from stretching header outside of boundaries
+    &.row {
+        --bs-gutter-x: 0;
+    }
+
+    a {
+        color: #e65524;
+    }
+
+    div p {
+        display: block;
+        width: auto;
+        // max-width: 630px;
+        margin: 10px 3% 10px 3%;
+        background: #eee;
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+    }
+}

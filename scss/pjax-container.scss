@@ -1,0 +1,120 @@
+@import "./colors.scss";
+
+div#pjax-container {
+    width: 100%;
+    margin: 0;
+
+    /*** Overflow navigation ***/
+    .jb-overflowmenu-menu-secondary {
+        background-color: #f7f7f7;
+        border: 1px solid #bebebe;
+        padding: 5px 0;
+
+        /*** Overflow Dropdown ***/
+        li.item {
+            position: relative;
+            padding: 0px 10px;
+            display: inline-block;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            border-bottom: 1px solid #bebebe;
+            white-space: nowrap;
+            list-style: none;
+
+            &:before {
+                font-family: "FontAwesome";
+                content: "\F0D9";
+                padding: 5px;
+            }
+
+            a > i {
+                margin-top: 5px;
+            }
+
+            &:hover {
+                padding: 0 10px;
+                color: #e65524;
+                background-color: #fff;
+                border-left: none;
+                border-top: none;
+                border-right: none;
+
+                > a {
+                    color: #e65524;
+                    text-decoration: none;
+                }
+            }
+
+            div.customQ-dropdown {
+                border-top-left-radius: 6px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 6px;
+                border-bottom-left-radius: 6px;
+                border: solid 1px #ddd;
+                border: solid 1px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                padding: 12px 0;
+                background: #fff;
+                font-size: 0.95em;
+                // min-width: 245px;
+                list-style: none;
+                left: -247px;
+                top: -1px;
+                position: absolute;
+                z-index: 10;
+
+                ul li > .controlQ div.editQ {
+                    margin-top: 2px;
+                    float: left;
+
+                    .manageQ {
+                        display: none;
+                        position: absolute;
+                        z-index: 20;
+                        top: 0;
+                        left: 0px;
+                        padding: 34px 28px;
+
+                        ul {
+                            border: 1px solid #ddd;
+                            // min-width: 75px;
+                            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                            border-top-left-radius: 6px;
+                            border-bottom-left-radius: 6px;
+                            padding: 6px 0;
+                            background-color: #fff;
+                        }
+                    }
+
+                    &:hover {
+                        .manageQ {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+        .customQ-dropdown li > span {
+            padding: 0 5px;
+        }
+    }
+}
+
+div#content {
+    .icon-bar {
+        margin-bottom: 20px;
+        padding-top: 5px;
+
+        .sticky.bar.opaque {
+            .content {
+                width: 100%;
+            }
+        }
+    }
+
+    // Makes sure the header does not stay the same height as the table
+    .table-header {
+        margin-bottom: 45px;
+    }
+}

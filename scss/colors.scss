@@ -1,0 +1,19 @@
+$light-background: #eee;
+$light-header: #9da39d;
+$light: #000;
+$light-header-background: rgb(248, 248, 248);
+$light-info-background: #eee;
+$light-content-background: #fff;
+$light-nav-background: #eee;
+$light-nav-link: #004a80;
+$light-sub-nav-background: #f7f7f7;
+
+$dark-background: #202225;
+$dark-header: #292b2f;
+$dark: #eee;
+$dark-header-background: #3a3c42;
+$dark-info-background: darken($light-info-background, 50%);
+$dark-content-container: #40444b;
+$dark-nav-background: #7e7e7e;
+$dark-nav-link: #0093ff;
+$dark-sub-nav-background: #7e7e7e;
