@@ -21,7 +21,7 @@ This is a modified version of **osTicket** that aims to be responsive, more usab
 <br>
 
 ### Built with
-* [![Next][Next.js]][Next-url]
+* [![Next][Next.js]][https://nextjs.org/]
 
 Requirements 
 ------------
