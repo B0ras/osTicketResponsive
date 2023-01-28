@@ -1,32 +1,38 @@
-osTicket
-========
-<a href="https://osticket.com"><img height="80px" width="80px" src="images/favicon.png"
-align="left" hspace="10" vspace="6"></a>
+<br>
+<div align="center">
 
-**osTicket** is a widely-used open source support ticket system. It seamlessly
-integrates inquiries created via email, phone and web-based forms into a
-simple easy-to-use multi-user web interface. Manage, organize and archive
-all your support requests and responses in one place while providing your
-customers with accountability and responsiveness they deserve.
+<a href="https://osticket.com">
+  <img height="80px" width="80px" src="images/favicon.png">
+</a>  
 
-How osTicket works for you
---------------------------
-  1. Users create tickets via your website, email, or phone
-  1. Incoming tickets are saved and assigned to agents
-  1. Agents help your users resolve their issues
+<h3 align="center">osTicket - Responsive</h3>
 
-osTicket is an attractive alternative to higher-cost and complex customer
-support systems; simple, lightweight, reliable, open source, web-based and
-easy to setup and use. The best part is, it's completely free.
+  <p align="center">
+    Modified, responsive version of the popular ticketing system, osTicket. 
+    <br>
+  </p>
+</div>
 
-Requirements
+
+## About The Project
+
+This is a modified version of **osTicket** that aims to be responsive, more usable for devices with touchscreens and look slightly more modern. For more info, please visit the official repo [here](https://github.com/osTicket/osTicket).
+
+<br>
+
+### Built with
+* [![Next][Next.js]][Next-url]
+
+Requirements 
 ------------
+(From the official repo of **osTicket**)
   * HTTP server running Microsoft® IIS or Apache
   * PHP version 8.0
   * mysqli extension for PHP
   * MySQL database version 5.5
 
 ### Recommendations
+(From the official repo of **osTicket**)
   * gd, gettext, imap, json, mbstring, and xml extensions for PHP
   * APC module enabled and configured for PHP
 
