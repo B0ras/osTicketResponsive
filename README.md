@@ -24,9 +24,15 @@ This is a modified version of **osTicket** that aims to be responsive, more usab
 * ![Jquerry](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 * ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 * ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&*logoColor=white)
+* ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
-Requirements 
-------------
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Getting Started
+
+### Requirements 
+
 (From the official repo of **osTicket**)
   * HTTP server running Microsoft® IIS or Apache
   * PHP version 8.0
@@ -38,110 +44,83 @@ Requirements
   * gd, gettext, imap, json, mbstring, and xml extensions for PHP
   * APC module enabled and configured for PHP
 
-Deployment
-----------
-osTicket now supports bleeding-edge installations. The easiest way to
-install the software and track updates is to clone the public repository.
-Create a folder on you web server (using whatever method makes sense for
-you) and cd into it. Then clone the repository (the folder must be empty!):
+### Installation
 
-    git clone https://github.com/osTicket/osTicket
+1. Clone the repo
 
-And deploy the code into somewhere in your server's www root folder, for
+    ```properties
+    git clone git@github.com:B0ras/osTicketResponsive.git
+    ```
+
+2. deploy the code into somewhere in your server's www root folder, for
 instance
 
-    cd osTicket
-    php manage.php deploy --setup /var/www/htdocs/osticket/
+    ```properties
+    cd osTicketResponsive
+    php manage.php deploy --setup /var/www/htdocs/osticketResponsive/
+    ```
 
-Then you can configure your server if necessary to serve that folder, and
-visit the page and install osTicket as usual. Go ahead and even delete
-setup/ folder out of the deployment location when you’re finished. Then,
-later, you can fetch updates and deploy them (from the folder where you
-cloned the git repo into)
+### Development Dependencies
 
-    git pull
-    php manage.php deploy -v /var/www/htdocs/osticket/
+1. Sass Compiler
+  ##### npm:
+   ```properties
+   npm i -g sass
+   ```
+  ##### or yarn:
+  ```properties
+  yarn global add sass
+  ```
 
-Upgrading
----------
-osTicket supports upgrading from 1.6-rc1 and later versions. As with any
-upgrade, strongly consider a backup of your attachment files, database, and
-osTicket codebase before embarking on an upgrade.
+2. Bootstrap 5.2.3
 
-To trigger the update process, fetch the osTicket tarball from either
-the osTicket [github](http://github.com/osTicket/osTicket/releases) page
-or from the [osTicket website](https://osticket.com). Extract the tarball
-into the folder of your osTicket codebase. This can also be accomplished
-with the zip file, and a FTP client can of course be used to upload the new
-source code to your server.
+  ##### npm:
+   ```properties
+   npm i bootstrap@5.2.3
+   ```
+  ##### or yarn:
+  ```properties
+  yarn add bootstrap@5.2.3
+  ```
 
-Any way you choose your adventure, when you have your codebase upgraded to
-osTicket-1.7, visit the /scp page of you ticketing system. The upgrader will
-be presented and will walk you through the rest of the process. (The couple
-clicks needed to go through the process are pretty boring to describe).
+3. Bootstrap Icons
+   
+  ##### npm:
+   ```properties
+   npm i bootstrap-icons@5.2.3
+   ```
+  ##### or yarn:
+  ```properties
+  yarn add bootstrap-icons@1.10.3
+  ```  
 
-### Upgrading from v1.6
-**WARNING**: If you are upgrading from osTicket 1.6, please ensure that all
-    your files in your upload folder are both readable and writable to your
-    http server software. Unreadable files will not be migrated to the
-    database during the upgrade and will be effectively lost.
+### Compiling Sass files
 
-After upgrading, we recommend migrating your attachments to the database or
-to the new filesystem plugin. Use the `file` command-line applet to perform
-the migration.
+Bootstrap was used in order to make sure that responsiveness would work as smoothly as possible on all screen sizes. Not everything was necessary so it was modified using Sass to keep the bundle size to the minimum.
 
-    php manage.php file migrate --backend=6 --to=D
+* For the setup wizard: 
 
-View the UPGRADING.txt file for other todo items to complete your upgrade.
+```properties
+sass osTicketResponsive/scss/styles.scss osTicketResponsive/setup/css/wizard_responsive.css --style compressed
+```
 
-Help
-----
-Visit the [Documentation](https://docs.osticket.com/) or the
-[forum](https://forum.osticket.com/). And if you'd like professional help
-managing your osTicket installation,
-[commercial support](https://osticket.com/support/) is available.
+* For the admin/agent panel: 
 
-Contributing
-------------
-Create your own fork of the project and use
-[git-flow](https://github.com/nvie/gitflow) to create a new feature. Once
-the feature is published in your fork, send a pull request to begin the
-conversation of integrating your new feature into osTicket.
+```properties
+sass osTicketResponsive/scss/scp.scss osTicketResponsive/scp/scc/scp_responsive.css --style compressed
+```
 
-### Localization
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/osticket-official/localized.png)](http://i18n.osticket.com/project/osticket-official)
+* For the client: 
 
-The interface for osTicket is now completely translatable. Language packs
-are available on the [download page](https://osticket.com/download). If you
-do not see your language there, join the [Crowdin](https://crowdin.com/project/osticket-official)
-project and request to have your language added. Languages which reach 100%
-translated are are significantly reviewed will be made available on the
-osTicket download page.
+```properties
+sass osTicketResponsive/scss/theme.scss osTicketResponsive/assets/default/css/theme_responsive.css --style compressed
+```
 
-The software can also be translated in place in our [JIPT site](http://jipt.i18n.osticket.com).
-Once you have a Crowdin account, login and translate the software in your browser!
+## Contributing
+If you have an idea on how to make the project better it would be a good idea to open up an issue. If you want to make a pull request: 
 
-Localizing strings in new code requires usage of a [few rules](setup/doc/i18n.md).
-
-License
--------
-osTicket is released under the GPL2 license. See the included LICENSE.txt
-file for the gory details of the General Public License.
-
-osTicket is supported by several magical open source projects including:
-
-  * [Font-Awesome](http://fortawesome.github.com/Font-Awesome/)
-  * [HTMLawed](http://www.bioinformatics.org/phplabware/internal_utilities/htmLawed)
-  * [jQuery dropdown](http://labs.abeautifulsite.net/jquery-dropdown/)
-  * [jsTimezoneDetect](http://pellepim.bitbucket.org/jstz/)
-  * [mPDF](http://www.mpdf1.com/)
-  * [PasswordHash](http://www.openwall.com/phpass/)
-  * [PEAR](http://pear.php.net/package/PEAR)
-  * [PEAR/Auth_SASL](http://pear.php.net/package/Auth_SASL)
-  * [PEAR/Mail](http://pear.php.net/package/mail)
-  * [PEAR/Net_SMTP](http://pear.php.net/package/Net_SMTP)
-  * [PEAR/Net_Socket](http://pear.php.net/package/Net_Socket)
-  * [PEAR/Serivces_JSON](http://pear.php.net/package/Services_JSON)
-  * [php-gettext](https://launchpad.net/php-gettext/)
-  * [phpseclib](http://phpseclib.sourceforge.net/)
-  * [Spyc](http://github.com/mustangostang/spyc)
+1. Fork the project
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
