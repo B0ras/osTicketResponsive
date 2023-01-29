@@ -2,10 +2,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.3",
-    "jquery": "3.5.1"
+    "bootstrap-icons": "^1.10.3"
   },
-  "devDependencies": {
-    "@types/jquery": "^3.5.16"
-  }
+  "devDependencies": {}
 }
