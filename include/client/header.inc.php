@@ -87,11 +87,11 @@ if (osTicket::is_ie())
                 $qs['lang'] = $L; ?>
                 <link rel="alternate" href="//<?php echo $_SERVER['HTTP_HOST'] . htmlspecialchars($_SERVER['REQUEST_URI']); ?>?<?php
                      echo http_build_query($qs); ?>" hreflang="<?php echo $L; ?>" />
-            <?php
+                <?php
             } ?>
             <link rel="alternate" href="//<?php echo $_SERVER['HTTP_HOST'] . htmlspecialchars($_SERVER['REQUEST_URI']); ?>"
                 hreflang="x-default" />
-        <?php
+            <?php
         }
         ?>
     </head>
@@ -135,25 +135,25 @@ if (osTicket::is_ie())
                             <a href="<?php echo $signout_url; ?>">
                                 <?php echo __('Sign Out'); ?>
                             </a>
-                        <?php
+                            <?php
                         } elseif ($nav) {
                             if ($cfg->getClientRegistrationMode() == 'public') { ?>
                                 <text class="guest-user">
                                     <?php echo __('Guest User'); ?>
                                 </text>
-                            <?php
+                                <?php
                             }
                             if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
                                 <a href="<?php echo $signout_url; ?>">
                                     <?php echo __('Sign Out'); ?>
                                 </a>
-                            <?php
+                                <?php
                             } elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
                                 <a class="btn btn-orange signin-button" href="<?php echo $signin_url; ?>">
                                     <?php echo __('Sign In'); ?>
                                     <i class="icon-user"></i>
                                 </a>
-                            <?php
+                                <?php
                             }
                         } ?>
                     </p>
@@ -198,11 +198,13 @@ if (osTicket::is_ie())
                         }
                     } ?>
                 </ul>
-            <?php
+                <?php
             } else { ?>
                 <hr>
-            <?php
+                <?php
             } ?>
+
+
             <div id="content">
 
                 <?php if ($errors['err']) { ?>

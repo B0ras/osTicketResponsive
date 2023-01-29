@@ -30,6 +30,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // icons
 // @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 
+@import "./colors.scss";
 html {
     font-size: 100%;
     overflow-y: scroll;
@@ -311,10 +312,10 @@ h2 {
     background-color: #0299d2;
 }
 body {
-    background: url("../images/page_bg.png") top left repeat-x #c8c8c8;
+    background: $light-body-background;
 }
 #container {
-    background: #fff;
+    background: $light-container-background;
     // width: 840px;
     margin: auto 5% auto 5%;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -378,56 +379,65 @@ body {
     -moz-box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
     margin-top: 10px;
-}
-#nav li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: inline;
-    // Make list elements more distinguishable on small screens
-    @media (max-width: 575px) {
-        margin-top: 10px;
+
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: inline;
+        // Make list elements more distinguishable on small screens
+        @media (max-width: 575px) {
+            margin-top: 10px;
+        }
+
+        a {
+            display: block;
+            width: auto;
+            float: left;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            padding: 0 10px 0 32px;
+            margin-left: 10px;
+            color: #333;
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            background-position: 10px 50%;
+            background-repeat: no-repeat;
+
+            &.active,
+            &:hover {
+                background-color: #dbefff;
+                color: #000;
+            }
+
+            &:hover {
+                background-color: #ededed;
+                color: #0054a6;
+            }
+
+            &.home {
+                background-image: url("../images/icons/home.png");
+            }
+
+            &.kb {
+                background-image: url("../images/icons/kb.png");
+            }
+
+            &.new {
+                background-image: url("../images/icons/new.png");
+            }
+
+            &.status {
+                background-image: url("../images/icons/status.png");
+            }
+
+            &.tickets {
+                background-image: url("../images/icons/tix.png");
+            }
+        }
     }
-}
-#nav li a {
-    display: block;
-    width: auto;
-    float: left;
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-    padding: 0 10px 0 32px;
-    margin-left: 10px;
-    color: #333;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    background-position: 10px 50%;
-    background-repeat: no-repeat;
-}
-#nav li a.active,
-#nav li a:hover {
-    background-color: #dbefff;
-    color: #000;
-}
-#nav li a:hover {
-    background-color: #ededed;
-    color: #0054a6;
-}
-#nav li a.home {
-    background-image: url("../images/icons/home.png");
-}
-#nav li a.kb {
-    background-image: url("../images/icons/kb.png");
-}
-#nav li a.new {
-    background-image: url("../images/icons/new.png");
-}
-#nav li a.status {
-    background-image: url("../images/icons/status.png");
-}
-#nav li a.tickets {
-    background-image: url("../images/icons/tix.png");
 }
 #content {
     padding: 20px 0;
@@ -1012,14 +1022,17 @@ a.refresh {
 
     .nav-item {
         $bs-link-color: $link-color;
+        .nav-link {
+            color: $link-color;
+        }
         // .nav-link {
         //     color: $link-color;
         // }
         .active {
             background-color: $link-color;
+            color: white;
         }
     }
-
     .nav-icon {
         margin-right: 5px;
     }
