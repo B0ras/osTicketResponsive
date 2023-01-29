@@ -19,3 +19,5 @@ include/mpdf/ttfontdata
 include/mpdf/tmp
 nbproject/
 .vscode/launch.json
+
+node_modules
