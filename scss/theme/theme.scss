@@ -1,3 +1,5 @@
+// This files controls how the client looks like.
+
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/maps";
@@ -24,6 +26,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // Components
 @import "../node_modules/bootstrap/scss/buttons";
 @import "../node_modules/bootstrap/scss/tables";
+@import "../node_modules/bootstrap/scss/nav";
 // icons
 // @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 
@@ -999,5 +1002,25 @@ a.refresh {
     }
     .action-button {
         margin-top: 10px;
+    }
+}
+
+.nav-bar {
+    $margin-size: 5%;
+    margin-left: $margin-size;
+    margin-right: 5%;
+
+    .nav-item {
+        $bs-link-color: $link-color;
+        // .nav-link {
+        //     color: $link-color;
+        // }
+        .active {
+            background-color: $link-color;
+        }
+    }
+
+    .nav-icon {
+        margin-right: 5px;
     }
 }

@@ -140,7 +140,8 @@ if (osTicket::is_ie())
                             if ($cfg->getClientRegistrationMode() == 'public') { ?>
                                 <text class="guest-user">
                                     <?php echo __('Guest User'); ?>
-                                </text> <?php
+                                </text>
+                            <?php
                             }
                             if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
                                 <a href="<?php echo $signout_url; ?>">
@@ -178,11 +179,22 @@ if (osTicket::is_ie())
             </div>
             <?php
             if ($nav) { ?>
-                <ul id="nav" class="row nav">
+                <ul class="nav nav-pills nav-fill nav-bar">
                     <?php
                     if ($nav && ($navs = $nav->getNavLinks()) && is_array($navs)) {
                         foreach ($navs as $name => $nav) {
-                            echo sprintf('<li class="col-12 col-sm-auto"><a class="%s %s" href="%s">%s</a></li>%s', $nav['active'] ? 'active' : '', $name, (ROOT_PATH . $nav['href']), $nav['desc'], "\n");
+                            echo sprintf('
+                            <li class="nav-item">
+                                <a class="%s nav-link link-success" href="%s">
+                                    <i class="%s nav-icon"></i>%s
+                                </a>
+                            </li>%s',
+                                $nav['active'] ? 'active' : '',
+                                (ROOT_PATH . $nav['href']),
+                                $nav['icon'],
+                                $nav['desc'],
+                                "\n"
+                            );
                         }
                     } ?>
                 </ul>
@@ -194,7 +206,9 @@ if (osTicket::is_ie())
             <div id="content">
 
                 <?php if ($errors['err']) { ?>
-                    <div id="msg_error"><?php echo $errors['err']; ?></div>
+                    <div id="msg_error">
+                        <?php echo $errors['err']; ?>
+                    </div>
                 <?php } elseif ($msg) { ?>
                     <div id="msg_notice">
                         <?php echo $msg; ?>
