@@ -101,19 +101,19 @@ Bootstrap was used in order to make sure that responsiveness would work as smoot
 * For the setup wizard: 
 
 ```properties
-sass osTicketResponsive/scss/styles.scss osTicketResponsive/setup/css/wizard_responsive.css --style compressed
+sass osTicketResponsive/scss/setup/styles.scss osTicketResponsive/setup/css/wizard_responsive.css --style compressed
 ```
 
 * For the admin/agent panel: 
 
 ```properties
-sass osTicketResponsive/scss/scp.scss osTicketResponsive/scp/scc/scp_responsive.css --style compressed
+sass osTicketResponsive/scss/scp/scp.scss osTicketResponsive/scp/scc/scp_responsive.css --style compressed
 ```
 
 * For the client: 
 
 ```properties
-sass osTicketResponsive/scss/theme.scss osTicketResponsive/assets/default/css/theme_responsive.css --style compressed
+sass osTicketResponsive/scss/theme/theme.scss osTicketResponsive/assets/default/css/theme_responsive.css --style compressed
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
