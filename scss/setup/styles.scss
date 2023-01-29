@@ -1,9 +1,9 @@
 // Required
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/maps";
-@import "../../node_modules/bootstrap/scss/mixins";
-@import "../../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
 $link-color: #f3811c;
 $success-color: #198754;
 $error-color: #dc3545;
@@ -14,25 +14,23 @@ $custom-colors: (
     "custom-color": $link-color,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
-// @import "../../node_modules/bootstrap/scss/mixins/border-radius";
-// @import "../../node_modules/bootstrap/scss/mixins/utilities";
-@import "../../node_modules/bootstrap/scss/helpers";
-@import "../../node_modules/bootstrap/scss/reboot";
-@import "../../node_modules/bootstrap/scss/vendor/rfs";
-@import "../../node_modules/bootstrap/scss/transitions";
+@import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/vendor/rfs";
+@import "../node_modules/bootstrap/scss/transitions";
 // Forms
-@import "../../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/forms";
 // Utilities
-@import "../../node_modules/bootstrap/scss/utilities";
-@import "../../node_modules/bootstrap/scss/utilities/api";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/utilities/api";
 // Layout
-@import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/containers";
 // Components
-@import "../../node_modules/bootstrap/scss/accordion";
-@import "../../node_modules/bootstrap/scss/buttons";
-@import "../../node_modules/bootstrap/scss/alert";
-@import "../../node_modules/bootstrap/scss/popover";
+@import "../node_modules/bootstrap/scss/accordion";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/alert";
+@import "../node_modules/bootstrap/scss/popover";
 // Icons
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 
