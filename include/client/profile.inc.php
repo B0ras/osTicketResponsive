@@ -5,7 +5,8 @@
 </p>
 <form action="profile.php" method="post">
   <?php csrf_token(); ?>
-<table width="800" class="padded">
+  <div class="table-responsive">
+  <table width="800" class="padded">
 <?php
 foreach ($user->getForms() as $f) {
     $f->render(['staff' => false]);
@@ -90,6 +91,8 @@ $selected = ($info['lang'] == $l['code']) ? 'selected="selected"' : ''; ?>
 <?php } ?>
 <?php } ?>
 </table>
+
+  </div>
 <hr>
 <p style="text-align: center;">
     <input type="submit" value="<?php echo __('Update'); ?>"/>
