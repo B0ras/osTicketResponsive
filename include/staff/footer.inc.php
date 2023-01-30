@@ -2,9 +2,12 @@
 </div>
 <?php if (!isset($_SERVER['HTTP_X_PJAX'])) { ?>
     <div id="footer">
-        <?php echo __('Copyright &copy;') ?> 2006-<?php echo date('Y'); ?>&nbsp;<?php
+        <?php echo __('Copyright &copy;') ?> 2006-
+        <?php echo date('Y'); ?>&nbsp;
+        <?php
 
-               echo Format::htmlchars((string) $ost->company ?: 'osTicket.com'); ?>&nbsp;<?php echo __('All Rights Reserved.'); ?>
+        echo Format::htmlchars((string) $ost->company ?: 'osTicket.com'); ?>&nbsp;
+        <?php echo __('All Rights Reserved.'); ?>
     </div>
     <?php
     if (is_object($thisstaff) && $thisstaff->isStaff()) { ?>
@@ -13,36 +16,38 @@
             <img src="<?php echo ROOT_PATH; ?>scp/autocron.php" alt="" width="1" height="1" border="0" />
             <!-- Do not remove <img src="autocron.php" alt="" width="1" height="1" border="0" /> or your auto cron will cease to function -->
         </div>
-    <?php
+        <?php
     } ?>
     </div>
-    <!-- <div id="overlay"></div>
-                    <div id="loading">
-                        <i class="icon-spinner icon-spin icon-3x pull-left icon-light"></i>
-                        <h1><?php echo __('Loading ...'); ?></h1>
-                    </div>
-                    <div class="dialog draggable" style="display:none;" id="popup">
-                        <div id="popup-loading">
-                            <h1 style="margin-bottom: 20px;"><i class="icon-spinner icon-spin icon-large"></i>
-                                <?php echo __('Loading ...'); ?>
-                            </h1>
-                        </div>
+    <div id="overlay"></div>
+    <div id="loading">
+        <i class="icon-spinner icon-spin icon-3x pull-left icon-light"></i>
+        <h1>
+            <?php echo __('Loading ...'); ?>
+        </h1>
+    </div>
+    <div class="dialog draggable" style="display:none;" id="popup">
+        <div id="popup-loading">
+            <h1 style="margin-bottom: 20px;"><i class="icon-spinner icon-spin icon-large"></i>
+                <?php echo __('Loading ...'); ?>
+            </h1>
+        </div>
 
-                        <div class="body"></div>
-                    </div>
-                    <div style="display:none;" class="dialog" id="alert">
-                        <h3><i class="icon-warning-sign"></i> <span id="title"></span></h3>
-                        <a class="close" href=""><i class="icon-remove-circle"></i></a>
-                        <hr />
-                        <div id="body" style="min-height: 20px;"></div>
-                        <hr style="margin-top:3em" />
-                        <p class="full-width">
-                            <span class="buttons pull-right">
-                                <input type="button" value="<?php echo __('OK'); ?>" class="close ok">
-                            </span>
-                        </p>
-                        <div class="clear"></div>
-                    </div> -->
+        <div class="body"></div>
+    </div>
+    <div style="display:none;" class="dialog" id="alert">
+        <h3><i class="icon-warning-sign"></i> <span id="title"></span></h3>
+        <a class="close" href=""><i class="icon-remove-circle"></i></a>
+        <hr />
+        <div id="body" style="min-height: 20px;"></div>
+        <hr style="margin-top:3em" />
+        <p class="full-width">
+            <span class="buttons pull-right">
+                <input type="button" value="<?php echo __('OK'); ?>" class="close ok">
+            </span>
+        </p>
+        <div class="clear"></div>
+    </div>
 
     <div class="modal fade body" id="popup" aria-hidden="true">
         <div class="modal-dialog">
@@ -193,6 +198,14 @@
         $api = new ConfigAjaxAPI();
         print $api->scp(false);
         ?>);
+    </script>
+    <script>
+        $("#advanced-search").click(() => {
+            $.dialog('ajax.php/tickets/search', 201);
+            const width = $(window).width();
+            const height = $(window).height();
+            // $("#popup").position
+        })
     </script>
     <?php
     if (

@@ -49,7 +49,7 @@ if ($editable) {
     ?>
   <div class="flex row">
     <div class="span12">
-      <select id="parent" name="parent_id" >
+      <select id="parent" name="parent_id" class="form-select">
           <?php
 foreach ($queues as $id => $name) {
     ?>
@@ -130,7 +130,7 @@ if ($search->isSaved()) { ?>
         <?php
         if ($search instanceof AdhocSearch && !$search->isSaved()) { ?>
         <span class="buttons">
-             <button class="save button" type="button"  name="save-search"
+             <button class="btn btn-primary" type="button"  name="save-search"
              value="save"><i class="icon-save"></i>  <?php echo $search->id
              ? __('Save Changes') : __('Save'); ?></button>
         </span>
@@ -147,7 +147,7 @@ if ($search->isSaved()) { ?>
  <div>
   <p class="full-width">
     <span class="buttons pull-left">
-        <input type="button"  name="cancel"  class="close" value="<?php echo __('Cancel'); ?>">
+        <input type="button"  name="cancel"  class="btn btn-danger" value="<?php echo __('Cancel'); ?>">
         <?php
         if ($search->isSaved()) { ?>
         <input type="button" name="done" class="done" value="<?php echo
@@ -163,7 +163,7 @@ if ($search->isSaved()) { ?>
         <?php echo __('Save'); ?></button>
       <?php
       } else { ?>
-      <button class="button" type="submit" name="submit" value="search"
+      <button class="btn btn-orange" type="submit" name="submit" value="search"
         id="do_search"><i class="icon-search"></i>
         <?php echo __('Search'); ?></button>
       <?php

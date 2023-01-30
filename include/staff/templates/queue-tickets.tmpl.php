@@ -157,8 +157,7 @@ return false;">
                 <i class="icon-search"></i>
             </button>
         </div>
-        <a href="#" onclick="javascript:
-        $.dialog('ajax.php/tickets/search', 201);">[
+        <a href="#" id="advanced-search">[
             <?php echo __('advanced'); ?>]
         </a>
         <i class="help-tip icon-question-sign" href="#advanced"></i>

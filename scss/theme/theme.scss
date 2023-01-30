@@ -58,6 +58,7 @@ blockquote {
     margin: 1em 40px;
 }
 hr {
+    width: 80vw;
     display: block;
     height: 1px;
     border: 0;
@@ -147,7 +148,7 @@ a {
     text-decoration: none;
 }
 h1 {
-    color: #00aeef;
+    color: $primary;
     font-weight: normal;
     font-size: 20px;
 }

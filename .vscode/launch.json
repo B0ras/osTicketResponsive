@@ -16,7 +16,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/manage.php",
             "port": 9003,
-            "args": ["deploy", "--setup", "/var/www/html/osticket"]
+            "args": ["deploy", "-v", "/var/www/html/osticket"]
         },
         {
             "name": "Deploy to Apache",

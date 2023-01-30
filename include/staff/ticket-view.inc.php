@@ -1517,7 +1517,7 @@ $(function() {
    });
 
   $('#collabselection').select2({
-    width: '350px',
+    width: 'resolve',
     allowClear: true,
     sorter: function(data) {
         return data.filter(function (item) {
