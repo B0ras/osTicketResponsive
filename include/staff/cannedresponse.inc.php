@@ -152,12 +152,20 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
         </div>
     <?php } ?>
     <p style="text-align:center;">
-        <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-        <input type="reset" name="reset" value="<?php echo __('Reset'); ?>" onclick="javascript:
+        <button type="submit" class="btn btn-sm orange-button">
+            <i class="icon-check"></i>
+            <?php echo $submit_text; ?>
+        </button>
+        <button type="reset" name="reset" class="btn btn-sm btn-outline-warning" onclick="javascript:
         $(this.form).find('textarea.richtext')
             .redactor('deleteDraft');
-        location.reload();" />
-        <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
-            onclick='window.location.href="canned.php"'>
+        location.reload();">
+            <i class="icon-refresh"></i>
+            <?php echo __('Reset'); ?>
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-danger" onclick='window.location.href="canned.php"'>
+            <i class="icon-x"></i>
+            <?php echo __('Cancel'); ?>
+        </button>
     </p>
 </form>

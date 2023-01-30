@@ -43,7 +43,8 @@ $plots = $report->getPlotData();
           </option>
         </select>
       </label>
-      <button class="green button action-button muted" type="submit">
+      <button class="btn btn-outline-warning btn-sm action-button muted" type="submit">
+        <i class="icon-refresh"></i>
         <?php echo __('Refresh'); ?>
       </button>
       <i class="help-tip icon-question-sign" href="#report_timeframe"></i>
@@ -69,7 +70,9 @@ $plots = $report->getPlotData();
   <h2>
     <?php echo __('Statistics'); ?>&nbsp;<i class="help-tip icon-question-sign" href="#statistics"></i>
   </h2>
-  <p><?php echo __('Statistics of tickets organized by department, help topic, and agent.'); ?></p>
+  <p>
+    <?php echo __('Statistics of tickets organized by department, help topic, and agent.'); ?>
+  </p>
   <p><b>
       <?php echo __('Range: '); ?>
     </b>
@@ -112,7 +115,7 @@ $plots = $report->getPlotData();
             foreach ($data['columns'] as $j => $c) {
               ?>
               <th <?php if ($j === 0)
-              echo 'width="30%" class="flush-left"'; ?>>
+                echo 'width="30%" class="flush-left"'; ?>>
                 <?php echo Format::htmlchars($c);
                 switch ($c) {
                   case 'Opened':
@@ -158,7 +161,7 @@ $plots = $report->getPlotData();
                 }
                 ?>
               </th>
-              <?php
+            <?php
             } ?>
           </tr>
         </tbody>
@@ -171,7 +174,7 @@ $plots = $report->getPlotData();
                 <th class="flush-left">
                   <?php echo Format::htmlchars($td); ?>
                 </th>
-                <?php } else { ?>
+              <?php } else { ?>
                 <td>
                   <?php echo Format::htmlchars($td);
                   if ($td) { // TODO Add head map
@@ -189,22 +192,22 @@ $plots = $report->getPlotData();
           <i class="icon-download"></i>
           <?php echo __('Export'); ?></a></div>
     </div>
-    <?php
+  <?php
   }
   ?>
 </form>
 <script>
   $.drawPlots(<?php echo JsonDataEncoder::encode($report->getPlotData()); ?>);
-    // Set Selected Period For Dashboard Stats and Export
-    <?php if ($report && $report->end) { ?>
-      $("div#basic_search select option").each(function () {
-        // Remove default selection
-        if ($(this)[0].selected)
-          $(this).removeAttr('selected');
-        // Set the selected period by the option's value (periods equal
-        // option's values)
-        if ($(this).val() == "<?php echo $report->end; ?>")
-          $(this).attr("selected", "selected");
-      });
+  // Set Selected Period For Dashboard Stats and Export
+  <?php if ($report && $report->end) { ?>
+    $("div#basic_search select option").each(function () {
+      // Remove default selection
+      if ($(this)[0].selected)
+        $(this).removeAttr('selected');
+      // Set the selected period by the option's value (periods equal
+      // option's values)
+      if ($(this).val() == "<?php echo $report->end; ?>")
+        $(this).attr("selected", "selected");
+    });
           <?php } ?>
 </script>

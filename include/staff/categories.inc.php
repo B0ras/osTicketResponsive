@@ -39,18 +39,15 @@ $pageNav->paginate($categories);
                 <h2><?php echo __('FAQ Categories');?></h2>
             </div>
             <div class="pull-right flush-right">
-                <a href="categories.php?a=add" class="green button">
+                <a href="categories.php?a=add" class="btn btn-sm btn-outline-secondary">
                     <i class="icon-plus-sign"></i>
                     <?php echo __( 'Add New Category');?>
                 </a>
-                <div class="pull-right flush-right">
-
-                    <span class="action-button" data-dropdown="#action-dropdown-more">
-                        <i class="icon-caret-down pull-right"></i>
+                <div class="pull-right flush-right small-margin-left">
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
                         <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
-                    </span>
-                    <div id="action-dropdown-more" class="action-dropdown anchor-right">
-                        <ul id="actions">
+                        <ul class="dropdown-menu">
                             <li class="danger">
                                 <a class="confirm" data-form-id="mass-actions" data-name="delete" href="categories.php?a=delete">
                                     <i class="icon-trash icon-fixed-width"></i>
@@ -58,6 +55,8 @@ $pageNav->paginate($categories);
                                 </a>
                             </li>
                         </ul>
+                            
+                        </button>
                     </div>
                 </div>
             </div>

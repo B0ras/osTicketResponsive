@@ -308,12 +308,9 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
 ?>
 <!-- SEARCH FORM START -->
 <div id='basic_search'>
-    <div class="pull-right" style="height:25px">
-        <span class="valign-helper"></span>
-        <?php
-        require STAFFINC_DIR . 'templates/tasks-queue-sort.tmpl.php';
-        ?>
-    </div>
+    <?php
+    require STAFFINC_DIR . 'templates/tasks-queue-sort.tmpl.php';
+    ?>
     <form action="tasks.php" method="get" onsubmit="javascript:
         $.pjax({
         url:$(this).attr('action') + '?' + $(this).serialize(),
@@ -323,11 +320,12 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
         return false;">
         <input type="hidden" name="a" value="search">
         <input type="hidden" name="search-type" value="" />
-        <div class="attached input">
-            <input type="text" class="basic-search" data-url="ajax.php/tasks/lookup" name="query" size="30"
-                value="<?php echo Format::htmlchars($_REQUEST['query'], true); ?>" autocomplete="off" autocorrect="off"
-                autocapitalize="off">
-            <button type="submit" class="attached button"><i class="icon-search"></i>
+        <div class="input-group">
+            <input type="text" class="form-control form-control-sm" data-url="ajax.php/tasks/lookup" name="query"
+                size="30" value="<?php echo Format::htmlchars($_REQUEST['query'], true); ?>" autocomplete="off"
+                autocorrect="off" autocapitalize="off">
+            <button type="submit" class="btn btn-sm btn-outline-secondary">
+                <i class="icon-search"></i>
             </button>
         </div>
     </form>

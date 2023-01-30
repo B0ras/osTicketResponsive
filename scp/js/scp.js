@@ -1442,13 +1442,17 @@ $(document).on('click.inline-edit', 'a.inline-edit', function (e) {
   return false;
 });
 
-["#selectAll", "#selectNone", "#selectToggle"].forEach((e) => {
-  $(e).click(toggleSelectorClass)
+$().ready(() => {
+  ["#selectAll", "#selectNone", "#selectToggle"].forEach((e) => {
+    $(e).click(toggleSelectorClass)
+
+    function toggleSelectorClass() {
+      const classes = "badge bg-secondary"
+      $(".badge").removeClass(classes)
+      $(this).toggleClass(classes)
+    }
+  })
+
 })
 
 
-function toggleSelectorClass() {
-  const classes = "badge bg-secondary"
-  $(".badge").removeClass(classes)
-  $(this).toggleClass(classes)
-}

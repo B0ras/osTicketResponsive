@@ -119,7 +119,7 @@
     margin-top: -1px;
     padding-top: 7px;
     display: inline-block;
-    border-left: 1px solid #ccc;
+    /* border-left: 1px solid #ccc; */
 }
 .action-button:hover i.icon-caret-down {
     border-color: inherit;

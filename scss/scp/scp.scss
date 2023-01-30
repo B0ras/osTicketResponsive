@@ -38,7 +38,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "../node_modules/bootstrap/scss/dropdown";
 @import "../node_modules/bootstrap/scss/nav";
 @import "../node_modules/bootstrap/scss/buttons";
-@import "../node_modules/bootstrap/scss/pagination";
+@import "../node_modules/bootstrap/scss/button-group";
 // icons
 // @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 
@@ -2384,77 +2384,7 @@ body {
         .dialog.draggable h3.drag-handle:hover {
             cursor: move;
         }
-        // Comment this because bootstrap get confused
-        // .row {
-        //     display: table-row;
-        //     width: 100%;
-        // }
 
-        // .row > [class~=" span"],
-        // .row > [class^="span"] {
-        //     padding: 5px 10px;
-        //     vertical-align: top;
-        //     display: table-cell;
-        // }
-        // .row > [class~=" span"] > select,
-        // .row > [class^="span"] > select,
-        // .row > [class~=" span"] > input,
-        // .row > [class^="span"] > input {
-        //     width: 100%;
-        //     // max-width: 100%;
-        // }
-        // .row .span3 {
-        //     width: 23%;
-        //     width: calc(25% - 5px);
-        // }
-        // .row .span6 {
-        //     width: 48%;
-        //     width: calc(50% - 5px);
-        // }
-        // .row .span9 {
-        //     width: 73%;
-        //     width: calc(75% - 5px);
-        // }
-        // .flex.row {
-        //     display: initial;
-        // }
-        // .flex.row > [class~=" span"],
-        // .flex.row > [class^="span"] {
-        //     display: inline-block;
-        // }
-
-        input[type="submit"],
-        input[type="reset"],
-        .action-button,
-        .button {
-            cursor: pointer;
-            box-sizing: content-box;
-            display: inline-block;
-            vertical-align: bottom;
-            margin: 0 4px;
-            // height: 22px;
-            line-height: 22px;
-            border: none;
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset;
-            padding: 2px 11px;
-            color: #555;
-            background-color: #f0f0f0;
-            background-color: rgba(0, 0, 0, 0.02);
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
-            font-family: inherit;
-            font-size: 0.95em;
-            font-weight: normal;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-transition: opacity 0.1s ease, background-color 0.1s ease,
-                box-shadow 0.1s ease, color 0.1s ease, background 0.1s ease;
-            transition: opacity 0.1s ease, background-color 0.1s ease,
-                box-shadow 0.1s ease, color 0.1s ease, background 0.1s ease;
-        }
         input[type="submit"] i,
         input[type="reset"] i,
         input[type="button"] i,
@@ -2564,29 +2494,6 @@ body {
 
         .save.success {
             background-color: rgba(22, 109, 82, 0.63);
-        }
-
-        .button:hover,
-        .button:active,
-        .action-button:hover,
-        .action-button:active,
-        input[type="button"]:hover,
-        input[type="button"]:active,
-        input[type="reset"]:hover,
-        input[type="reset"]:active {
-            color: black;
-            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5) inset;
-            background-color: #ddd;
-            background-color: rgba(0, 0, 0, 0.08);
-        }
-
-        button[type="submit"]:hover,
-        input[type="submit"]:hover,
-        input[type="submit"]:active {
-            color: white;
-            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.7) inset;
-            background-color: #888;
-            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .button:disabled,
@@ -3933,4 +3840,20 @@ input[type="tel"] {
 td select,
 .select2-container {
     width: 100% !important;
+}
+
+.orange-button {
+    @include button-outline-variant($link-color, white);
+}
+
+.small-margin-bottom {
+    margin-bottom: 10px;
+}
+
+.small-margin-right {
+    margin-right: 10px;
+}
+
+.small-margin-left {
+    margin-left: 10px;
 }

@@ -143,7 +143,7 @@ if (!defined('OSTSTAFFINC') || !$staff || !$thisstaff)
             <input type="text" size="40" style="width:300px" class="staff-username typeahead" name="username" disabled
               value="<?php echo Format::htmlchars($staff->username); ?>" />
             <?php if (!$bk || $bk->supportsPasswordChange()) { ?>
-              <button type="button" id="change-pw-button" class="action-button" onclick="javascript:
+              <button type="button" id="change-pw-button" class="btn btn-sm btn-outline-warning" onclick="javascript:
               $.dialog('ajax.php/staff/'+<?php echo $staff->getId(); ?>+'/change-password', 201);">
                 <i class="icon-refresh"></i>
                 <?php echo __('Change Password'); ?>
@@ -190,7 +190,7 @@ if (!defined('OSTSTAFFINC') || !$staff || !$thisstaff)
                 <?php } ?>
               </select>
               &nbsp;
-              <button type="button" id="config2fa-button" class="action-button" onclick="javascript:
+              <button type="button" id="config2fa-button" class="btn btn-sm btn-outline-secondary" onclick="javascript:
               $.dialog('ajax.php/staff/'+<?php echo $staff->getId();
               ?>+'/2fa/configure', 201);">
                 <i class="icon-gear"></i>
@@ -589,11 +589,11 @@ if (!defined('OSTSTAFFINC') || !$staff || !$thisstaff)
   </div>
 
   <p style="text-align:center;">
-    <button class="button action-button" type="submit" name="submit"><i class="icon-save"></i> <?php echo __('Save Changes'); ?></button>
-    <button class="button action-button" type="reset" name="reset"><i class="icon-undo"></i>
+    <button class="btn btn-sm orange-button" type="submit" name="submit"><i class="icon-save"></i> <?php echo __('Save Changes'); ?></button>
+    <button class="btn btn-sm btn-outline-warning" type="reset" name="reset"><i class="icon-undo"></i>
       <?php echo __('Reset'); ?>
     </button>
-    <button class="red button action-button" type="button" name="cancel" onclick="window.history.go(-1);"><i
+    <button class="btn btn-sm btn-outline-danger" type="button" name="cancel" onclick="window.history.go(-1);"><i
         class="icon-remove-circle"></i>
       <?php echo __('Cancel'); ?>
     </button>

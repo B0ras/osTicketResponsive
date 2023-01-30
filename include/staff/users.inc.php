@@ -99,34 +99,32 @@ $users->order_by($order . $order_column);
                         <?php echo __('User Directory'); ?>
                     </h2>
                 </div>
-                <div class="pull-right">
+                <div class="pull-right btn-group small-margin-bottom">
                     <?php if ($thisstaff->hasPerm(User::PERM_CREATE)) { ?>
-                        <a class="green button action-button popup-dialog" href="#users/add">
+                        <a class="btn btn-outline-secondary popup-dialog" href="#users/add">
                             <i class="icon-plus-sign"></i>
                             <?php echo __('Add User'); ?>
                         </a>
-                        <a class="action-button popup-dialog" href="#users/import">
+                        <a class="btn btn-outline-secondary popup-dialog" href="#users/import">
                             <i class="icon-upload"></i>
                             <?php echo __('Import'); ?>
                         </a>
-                        <?php } ?>
-                    <span class="action-button" data-dropdown="#action-dropdown-more"
-                        style="/*DELME*/ vertical-align:top; margin-bottom:0">
-                        <i class="icon-caret-down pull-right"></i>
-                        <span><i class="icon-cog"></i>
+                    <?php } ?>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown">
+                            <i class="icon-cog"></i>
                             <?php echo __('More'); ?>
-                        </span>
-                    </span>
-                    <div id="action-dropdown-more" class="action-dropdown anchor-right">
-                        <ul>
+                        </button>
+                        <ul class="dropdown-menu">
                             <?php if ($thisstaff->hasPerm(User::PERM_EDIT)) { ?>
                                 <li><a href="#add-to-org" class="users-action">
                                         <i class="icon-group icon-fixed-width"></i>
                                         <?php echo __('Add to Organization'); ?>
                                     </a></li>
-                                <?php
-                                }
-                                if ('disabled' != $cfg->getClientRegistrationMode()) { ?>
+                            <?php
+                            }
+                            if ('disabled' != $cfg->getClientRegistrationMode()) { ?>
                                 <li><a class="users-action" href="#reset">
                                         <i class="icon-envelope icon-fixed-width"></i>
                                         <?php echo __('Send Password Reset Email'); ?>
@@ -138,21 +136,23 @@ $users->order_by($order . $order_column);
                                         </a></li>
                                     <li><a class="users-action" href="#lock">
                                             <i class="icon-lock icon-fixed-width"></i>
-                                            <?php echo __('Lock'); ?></a></li>
+                                            <?php echo __('Lock'); ?>
+                                        </a></li>
                                     <li><a class="users-action" href="#unlock">
                                             <i class="icon-unlock icon-fixed-width"></i>
                                             <?php echo __('Unlock'); ?>
                                         </a></li>
-                                    <?php }
-                                } # end of registration-enabled
-                                if ($thisstaff->hasPerm(User::PERM_DELETE)) { ?>
+                                <?php }
+                            } # end of registration-enabled
+                            if ($thisstaff->hasPerm(User::PERM_DELETE)) { ?>
                                 <li class="danger"><a class="users-action" href="#delete">
                                         <i class="icon-trash icon-fixed-width"></i>
                                         <?php echo __('Delete'); ?>
                                     </a></li>
-                                <?php } ?>
+                            <?php } ?>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -233,12 +233,14 @@ $users->order_by($order . $order_column);
                         <td>
                             <?php echo $status; ?>
                         </td>
-                        <td><?php echo Format::date($U['created']); ?></td>
+                        <td>
+                            <?php echo Format::date($U['created']); ?>
+                        </td>
                         <td>
                             <?php echo Format::datetime($U['updated']); ?>&nbsp;
                         </td>
                     </tr>
-                    <?php } //end of foreach. ?>
+                <?php } //end of foreach. ?>
             </tbody>
             <tfoot>
                 <tr>
@@ -254,7 +256,7 @@ $users->order_by($order . $order_column);
                             <a id="selectToggle" href="#ckb">
                                 <?php echo __('Toggle'); ?>
                             </a>&nbsp;&nbsp;
-                            <?php } else {
+                        <?php } else {
                             echo '<i>';
                             echo __('Query returned 0 results.');
                             echo '</i>';

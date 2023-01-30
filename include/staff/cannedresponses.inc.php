@@ -68,14 +68,41 @@ else
         <div class="pull-left flush-left">
             <h2><?php echo __('Canned Responses');?></h2>
         </div>
-        <div class="pull-right flush-right">
-            <a href="canned.php?a=add" class="green button"><i class="icon-plus-sign"></i> <?php echo __('Add New Response');?></a>
+        <div class="pull-right flush-right d-flex">
 
-            <span class="action-button" data-dropdown="#action-dropdown-more" style="/*DELME*/ vertical-align:top; margin-bottom:0">
+        <a href="canned.php?a=add" class="btn btn-sm btn-outline-secondary"><i class="icon-plus-sign"></i> <?php echo __('Add New Response');?></a>
+
+        <div class="dropdown">
+            <button class="btn btn-sm btn-outline-secondary dropdown-toggle small-margin-left" data-bs-toggle="dropdown">
+                <i class="icon-cog"></i> <?php echo __('More');?>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="confirm" data-name="enable" href="canned.php?a=enable">
+                        <i class="icon-ok-sign icon-fixed-width"></i>
+                        <?php echo __( 'Enable'); ?>
+                    </a>
+                </li>
+                <li>
+                    <a class="confirm" data-name="disable" href="canned.php?a=disable">
+                        <i class="icon-ban-circle icon-fixed-width"></i>
+                        <?php echo __( 'Disable'); ?>
+                    </a>
+                </li>
+                <li class="danger">
+                    <a class="confirm" data-name="delete" href="canned.php?a=delete">
+                        <i class="icon-trash icon-fixed-width"></i>
+                        <?php echo __( 'Delete'); ?>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+            <!-- <span class="action-button" data-dropdown="#action-dropdown-more" style="/*DELME*/ vertical-align:top; margin-bottom:0">
                     <i class="icon-caret-down pull-right"></i>
                     <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
-            </span>
-            <div id="action-dropdown-more" class="action-dropdown anchor-right">
+            </span> -->
+            <!-- <div id="action-dropdown-more" class="action-dropdown anchor-right">
                 <ul id="actions">
                     <li>
                         <a class="confirm" data-name="enable" href="canned.php?a=enable">
@@ -96,7 +123,7 @@ else
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

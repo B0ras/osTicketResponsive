@@ -101,7 +101,9 @@ $qstr .= '&amp;order=' . ($order == 'DESC' ? 'ASC' : 'DESC');
         <form action="directory.php" method="GET" name="filter">
             <input type="text" name="q" value="<?php echo Format::htmlchars($_REQUEST['q']); ?>">
             <select name="did" id="did">
-                <option value="0">&mdash; <?php echo __('All Departments'); ?> &mdash;</option>
+                <option value="0">&mdash;
+                    <?php echo __('All Departments'); ?> &mdash;
+                </option>
                 <?php
                 foreach ($thisstaff->getDepartmentNames() as $id => $name) {
                     $sel = ($_REQUEST['did'] && $_REQUEST['did'] == $id) ? 'selected="selected"' : '';
@@ -110,8 +112,12 @@ $qstr .= '&amp;order=' . ($order == 'DESC' ? 'ASC' : 'DESC');
                 ?>
             </select>
             &nbsp;&nbsp;
-            <input type="submit" name="submit" value="<?php echo __('Filter'); ?>" />
-            &nbsp;<i class="help-tip icon-question-sign" href="#apply_filtering_criteria"></i>
+            <button class="btn btn-outline-secondary" type="submit" name="submit">
+                <i class="icon-filter"></i>
+                <?php echo __('Filter'); ?>
+            </button>
+            &nbsp;
+            <i class="help-tip icon-question-sign" href="#apply_filtering_criteria"></i>
         </form>
     </div>
 </div>
@@ -159,12 +165,24 @@ else
             $ids = ($errors && is_array($_POST['ids'])) ? $_POST['ids'] : null;
             foreach ($agents as $A) { ?>
                 <tr id="<?php echo $A->staff_id; ?>">
-                    <td>&nbsp;<?php echo Format::htmlchars($A->getName()); ?></td>
-                    <td>&nbsp;<?php echo Format::htmlchars((string) $A->dept); ?></td>
-                    <td>&nbsp;<?php echo Format::htmlchars($A->email); ?></td>
-                    <td>&nbsp;<?php echo Format::phone($A->phone); ?></td>
-                    <td>&nbsp;<?php echo $A->phone_ext; ?></td>
-                    <td>&nbsp;<?php echo Format::phone($A->mobile); ?></td>
+                    <td>&nbsp;
+                        <?php echo Format::htmlchars($A->getName()); ?>
+                    </td>
+                    <td>&nbsp;
+                        <?php echo Format::htmlchars((string) $A->dept); ?>
+                    </td>
+                    <td>&nbsp;
+                        <?php echo Format::htmlchars($A->email); ?>
+                    </td>
+                    <td>&nbsp;
+                        <?php echo Format::phone($A->phone); ?>
+                    </td>
+                    <td>&nbsp;
+                        <?php echo $A->phone_ext; ?>
+                    </td>
+                    <td>&nbsp;
+                        <?php echo Format::phone($A->mobile); ?>
+                    </td>
                 </tr>
             <?php
             } // end of foreach

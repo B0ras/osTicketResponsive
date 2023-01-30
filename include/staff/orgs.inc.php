@@ -10,12 +10,13 @@ $orgs = Organization::objects()
 
 if ($_REQUEST['query']) {
     $search = $_REQUEST['query'];
-    $orgs->filter(Q::any(
-        array(
-            'name__contains' => $search,
-            // TODO: Add search for cdata
+    $orgs->filter(
+        Q::any(
+            array(
+                'name__contains' => $search,
+                // TODO: Add search for cdata
+            )
         )
-    )
     );
     $qs += array('query' => $_REQUEST['query']);
 }
@@ -85,27 +86,26 @@ $orgs->order_by($order . $order_column);
                     <?php echo __('Organizations'); ?>
                 </h2>
             </div>
-            <div class="pull-right">
+            <div class="pull-right btn-group small-margin-bottom">
                 <?php if ($thisstaff->hasPerm(Organization::PERM_CREATE)) { ?>
-                    <a class="green button action-button add-org" href="#">
+                    <a class="btn btn-outline-secondary add-org" href="#">
                         <i class="icon-plus-sign"></i>
                         <?php echo __('Add Organization'); ?>
                     </a>
                 <?php }
                 if ($thisstaff->hasPerm(Organization::PERM_DELETE)) { ?>
-                    <span class="action-button" data-dropdown="#action-dropdown-more"
-                        style="/*DELME*/ vertical-align:top; margin-bottom:0">
-                        <i class="icon-caret-down pull-right"></i>
-                        <span><i class="icon-cog"></i>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="icon-cog"></i>
                             <?php echo __('More'); ?>
-                        </span>
-                    </span>
-                    <div id="action-dropdown-more" class="action-dropdown anchor-right">
-                        <ul>
-                            <li class="danger"><a class="orgs-action" href="#delete">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="danger">
+                                <a class="orgs-action" href="#delete">
                                     <i class="icon-trash icon-fixed-width"></i>
                                     <?php echo __('Delete'); ?>
-                                </a></li>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 <?php } ?>

@@ -133,7 +133,6 @@ $pageNav->setURL('tickets.php', $args);
 <!-- SEARCH FORM START -->
 <div id='basic_search'>
     <div class="order-2" style="height:25px">
-        <span class="valign-helper"></span>
         <?php
         require 'queue-quickfilter.tmpl.php';
         if ($queue->getSortOptions())
@@ -150,10 +149,10 @@ return false;">
         <input type="hidden" name="a" value="search">
         <input type="hidden" name="search-type" value="" />
         <div class="attached input-group">
-            <input type="text" class="basic-search form-control" data-url="ajax.php/tickets/lookup" name="query"
+            <input type="text" class="form-control form-control-sm" data-url="ajax.php/tickets/lookup" name="query"
                 size="30" value="<?php echo Format::htmlchars($_REQUEST['query'] ?? null, true); ?>" autocomplete="off"
                 autocorrect="off" autocapitalize="off" aria-describedby="search-button">
-            <button type="submit" class="attached button" id="search-button">
+            <button type="submit" class="btn btn-outline-secondary btn-sm" id="search-button">
                 <i class="icon-search"></i>
             </button>
         </div>
@@ -216,11 +215,14 @@ return false;">
             </div>
 
             <div class="pull-right flush-right">
-                <?php
-                // TODO: Respect queue root and corresponding actions
-                if ($count) {
-                    Ticket::agentActions($thisstaff, array('status' => $status ?? null));
-                } ?>
+                <div class="btn-group">
+                    <?php
+                    // TODO: Respect queue root and corresponding actions
+                    if ($count) {
+                        Ticket::agentActions($thisstaff, array('status' => $status ?? null));
+                    } ?>
+
+                </div>
             </div>
         </div>
     </div>
