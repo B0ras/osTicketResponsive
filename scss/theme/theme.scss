@@ -27,6 +27,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "../node_modules/bootstrap/scss/buttons";
 @import "../node_modules/bootstrap/scss/tables";
 @import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/images";
 // icons
 // @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 
@@ -356,8 +357,8 @@ body {
     }
 
     #logo {
-        width: 220px;
-        height: 71px;
+        width: 100%;
+        height: 100%;
         float: left;
     }
 

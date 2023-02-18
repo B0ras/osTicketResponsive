@@ -109,15 +109,19 @@ if (osTicket::is_ie())
             <div id="header" class="row">
 
 
-                <a href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>"
-                    class="col-12 col-sm-7">
-                    <div class="support-header col">
-                        <div class="big-header col-12">SUPPORT CENTER</div>
-                        <div class="small-header col-12">Support Ticket System</div>
-                    </div>
-                </a>
+                <div class="col-12 col-xl-7">
+                    <a class=" pull-left" id="logo" href="<?php echo ROOT_PATH; ?>index.php"
+                        title="<?php echo __('Support Center'); ?>">
+                        <span class="valign-helper"></span>
+                        <div>
+                            <img class="img-fluid" src="<?php echo ROOT_PATH; ?>logo.php" border=0 alt="<?php
+                               echo $ost->getConfig()->getTitle(); ?>">
+                        </div>
+                    </a>
+                </div>
 
-                <div class="col-12 col-sm-5">
+
+                <div class="col-12 col-xl-5">
                     <p>
                         <?php
                         if (
