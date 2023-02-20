@@ -107,7 +107,7 @@ sass osTicketResponsive/scss/setup/styles.scss osTicketResponsive/setup/css/wiza
 * For the admin/agent panel: 
 
 ```properties
-sass osTicketResponsive/scss/scp/scp.scss osTicketResponsive/scp/scc/scp_responsive.css --style compressed
+sass osTicketResponsive/scss/scp/scp.scss osTicketResponsive/scp/css/scp_responsive.css --style compressed
 ```
 
 * For the client: 
