@@ -449,9 +449,9 @@ $gmtime = Misc::gmtime();
 </table>
 
 </div>
-<p style="text-align:center;">
-    <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
+<p style="text-align:center;margin-top:10px">
+    <input class="btn orange-button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
+    <input class="btn btn-outline-warning" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
 </p>
 </form>
 <script type="text/javascript">
