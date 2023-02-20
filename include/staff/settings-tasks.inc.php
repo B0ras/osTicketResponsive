@@ -55,7 +55,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                         ?>><?php echo $s->name; ?></option>
     <?php } ?>
                     </select>
-                    <button class="action-button pull-right" onclick="javascript:
+                    <button class="btn btn-outline-secondary btn-sm pull-right small-margin-top" onclick="javascript:
                     $.dialog('ajax.php/sequence/manage', 205);
                     return false;
                     "><i class="icon-gear"></i> <?php echo __('Manage'); ?></button>
@@ -286,9 +286,9 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
     </table>
    </div>
 </div>
-<p style="text-align:center;">
-    <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
+<p class="text-center">
+    <input class="btn btn-sm orange-button small-margin-top" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
+    <input class="btn btn-outline-warning btn-sm small-margin-top" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
 </p>
 </form>
 <script type="text/javascript">

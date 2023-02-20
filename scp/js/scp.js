@@ -136,7 +136,7 @@ var scp_prep = function () {
     var fObj = el.closest('form');
     if (!fObj.data('changed')) {
       fObj.data('changed', true);
-      $('input[type=submit], button[type=submit]', fObj).addClass('save pending');
+      // $('input[type=submit], button[type=submit]', fObj).addClass('save pending');
       $(window).bind('beforeunload', function (e) {
         return __('Are you sure you want to leave? Any changes or info you\'ve entered will be discarded!');
       });

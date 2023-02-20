@@ -228,8 +228,8 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
         </table>
     </div>
 
-    <p style="text-align:center;">
-        <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
-        <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>">
+    <p class="text-center">
+        <input class="btn btn-sm orange-button small-margin-top" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
+        <input class="btn btn-sm btn-outline-warning small-margin-top" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>">
     </p>
 </form>

@@ -58,7 +58,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                     ?>><?php echo $s->name; ?></option>
 <?php } ?>
                 </select>
-                <button class="action-button pull-right" onclick="javascript:
+                <button class="btn btn-sm btn-outline-secondary pull-right small-margin-top" onclick="javascript:
                 $.dialog('ajax.php/sequence/manage', 205);
                 return false;
                 "><i class="icon-gear"></i> <?php echo __('Manage'); ?></button>
@@ -253,7 +253,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                 $tform = TicketForm::objects()->one()->getForm();
                 $f = $tform->getField('message');
 ?>
-                <a class="action-button field-config" style="overflow:inherit"
+                <a class="btn btn-sm btn-outline-secondary field-config" style="overflow:inherit"
                     href="#ajax.php/form/field-config/<?php
                         echo $f->get('id'); ?>"
                     onclick="javascript:
@@ -280,8 +280,8 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
 </div>
 
 <p style="text-align:center;">
-    <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
+    <button class="btn orange-button small-margin-top" type="submit" name="submit"><?php echo __('Save Changes');?></button>
+    <button class="btn btn-outline-warning small-margin-top" type="reset" name="reset"><?php echo __('Reset Changes');?></button>
 </p>
 </form>
 <script type="text/javascript">

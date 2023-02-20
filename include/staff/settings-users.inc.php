@@ -15,7 +15,9 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                 <?php echo __('Settings'); ?>
             </a></li>
         <li><a href="#templates">
-                <i class="icon-file-text"></i> <?php echo __('Templates'); ?></a></li>
+                <i class="icon-file-text"></i>
+                <?php echo __('Templates'); ?>
+            </a></li>
     </ul>
     <div id="users-tabs_container">
         <div id="settings" class="tab_content table-responsive">
@@ -30,16 +32,18 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                         </th>
                     </tr>
                     <tr>
-                        <td width="180"><?php echo __('Name Formatting'); ?>:</td>
+                        <td width="180">
+                            <?php echo __('Name Formatting'); ?>:
+                        </td>
                         <td>
                             <select name="client_name_format">
                                 <?php foreach (PersonsName::allFormats() as $n => $f) {
-                                list($desc, $func) = $f;
-                                $selected = ($config['client_name_format'] == $n) ? 'selected="selected"' : ''; ?>
+                                    list($desc, $func) = $f;
+                                    $selected = ($config['client_name_format'] == $n) ? 'selected="selected"' : ''; ?>
                                     <option value="<?php echo $n; ?>" <?php echo $selected;
                                        ?>><?php echo __($desc); ?>
                                     </option>
-                                    <?php } ?>
+                                <?php } ?>
                             </select>
                             <i class="help-tip icon-question-sign" href="#client_name_format"></i>
                         </td>
@@ -80,7 +84,9 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                         </th>
                     </tr>
                     <tr>
-                        <td><?php echo __('Registration Required'); ?>:</td>
+                        <td>
+                            <?php echo __('Registration Required'); ?>:
+                        </td>
                         <td><input type="checkbox" name="clients_only" <?php
                         if ($config['clients_only'])
                             echo 'checked="checked"'; ?> />
@@ -102,7 +108,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                                         ?>
                                     </option>
                                     <?php
-                                    } ?>
+                                } ?>
                             </select>
                             <i class="help-tip icon-question-sign" href="#registration_method"></i>
                         </td>
@@ -113,7 +119,9 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                         </td>
                         <td>
                             <select name="client_passwd_policy">
-                                <option value=" "> &mdash; <?php echo __('All Active Policies'); ?> &mdash;</option>
+                                <option value=" "> &mdash;
+                                    <?php echo __('All Active Policies'); ?> &mdash;
+                                </option>
                                 <?php
                                 foreach (PasswordPolicy::allActivePolicies() as $P) {
                                     $id = $P->getBkId();
@@ -156,7 +164,8 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                                     echo sprintf('<option value="%d" %s>%d</option>', $i, (($config['client_login_timeout'] == $i) ? 'selected="selected"' : ''), $i);
                                 }
                                 ?>
-                            </select> <?php echo __('minutes locked out'); ?>
+                            </select>
+                            <?php echo __('minutes locked out'); ?>
                         </td>
                     </tr>
                     <tr>
@@ -217,22 +226,25 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                             <td colspan="2">
                                 <div style="padding:2px 5px">
                                     <a href="#ajax.php/content/<?php echo $id; ?>/manage" onclick="javascript:
-                $.dialog($(this).attr('href').substr(1), 201);
-            return false;" class="pull-left"><i class="icon-file-text icon-2x" style="color:#bbb;"></i> </a>
+                                $.dialog($(this).attr('href').substr(1), 201);
+                            return false;" class="pull-left"><i class="icon-file-text icon-2x" style="color:#bbb;"></i>
+                                    </a>
                                     <span
                                         style="display:inline-block;width:90%;width:calc(100% - 32px);padding-left:10px;line-height:1.2em">
                                         <a href="#ajax.php/content/<?php echo $id; ?>/manage" onclick="javascript:
-                $.dialog($(this).attr('href').substr(1), 201, null, {size:'large'});
-            return false;">
+                                $.dialog($(this).attr('href').substr(1), 201, null, {size:'large'});
+                            return false;">
                                             <?php
                                             echo Format::htmlchars($title); ?>
                                         </a><br />
-                                        <span class="faded"><?php
-                                        echo Format::display($notes); ?>
+                                        <span class="faded">
+                                            <?php
+                                            echo Format::display($notes); ?>
                                             <br><em>
                                                 <?php echo sprintf(__('Last Updated %s'), Format::datetime($upd));
                                                 ?>
-                                            </em></span>
+                                            </em>
+                                        </span>
                                 </div>
                             </td>
                         </tr>
@@ -256,9 +268,11 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                 </tbody>
             </table>
         </div>
-        <p style="text-align:center">
-            <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
-            <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>">
+        <p class="text-center">
+            <input class="btn orange-button small-margin-top" type="submit" name="submit"
+                value="<?php echo __('Save Changes'); ?>">
+            <input class="btn btn-outline-warning small-margin-top" type="reset" name="reset"
+                value="<?php echo __('Reset Changes'); ?>">
         </p>
     </div>
 </form>

@@ -102,7 +102,7 @@ else
                         <option value="Debug" <?php echo ($type=='Debug')?'selected="selected"':''; ?>><?php echo __('DEBUG');?></option>
                     </select>
                     &nbsp;&nbsp;
-                    <input type="submit" Value="<?php echo __('Go!');?>" />
+                    <input class="btn btn-sm btn-outline-secondary" type="submit" Value="<?php echo __('Go!');?>" />
                 </div>
             </form>
         </div>
@@ -119,7 +119,7 @@ else
             </h2>
                 </div>
                 <div id="actions" class="pull-right flush-right">
-                    <button class="red button" type="submit" name="delete"><i class="icon-trash"></i>
+                    <button class="btn btn-sm btn-outline-danger" type="submit" name="delete"><i class="icon-trash"></i>
                         <?php echo __( 'Delete Selected Entries');?>
                     </button>
                 </div>

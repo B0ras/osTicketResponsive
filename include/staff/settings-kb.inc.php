@@ -21,7 +21,9 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
             </thead>
             <tbody>
                 <tr>
-                    <td width="180" valign="top"><?php echo __('Knowledge Base Status'); ?>:</td>
+                    <td width="180" valign="top">
+                        <?php echo __('Knowledge Base Status'); ?>:
+                    </td>
                     <td>
                         <input type="checkbox" name="enable_kb" value="1" <?php echo $config['enable_kb'] ? 'checked="checked"' : ''; ?>>
                         <?php echo __('Enable Knowledge Base'); ?>
@@ -38,11 +40,15 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                     </td>
                 </tr>
                 <tr>
-                    <td width="180"><?php echo __('Canned Responses'); ?>:</td>
+                    <td width="180">
+                        <?php echo __('Canned Responses'); ?>:
+                    </td>
                     <td>
                         <input type="checkbox" name="enable_premade" value="1" <?php echo $config['enable_premade'] ? 'checked="checked"' : ''; ?>>
                         <?php echo __('Enable Canned Responses'); ?>
-                        &nbsp;<font class="error">&nbsp;<?php echo $errors['enable_premade']; ?></font>
+                        &nbsp;<font class="error">&nbsp;
+                            <?php echo $errors['enable_premade']; ?>
+                        </font>
                         <i class="help-tip icon-question-sign" href="#canned_responses"></i>
                     </td>
                 </tr>
@@ -50,8 +56,10 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
         </table>
 
     </div>
-    <p style="text-align:center;">
-        <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
-        <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>">
+    <p class="text-center">
+        <input class="btn orange-button small-margin-top" type="submit" name="submit"
+            value="<?php echo __('Save Changes'); ?>">
+        <input class="btn btn-outline-warning small-margin-top" type="reset" name="reset"
+            value="<?php echo __('Reset Changes'); ?>">
     </p>
 </form>

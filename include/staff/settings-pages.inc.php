@@ -310,10 +310,13 @@ $pages = Page::getPages();
                                     <?php } ?>
                             </tbody>
                         </table>
-                        <b>
-                            <?php echo __('Upload a new backdrop'); ?>:
-                        </b>
-                        <input type="file" name="backdrop[]" size="30" value="" /><br />
+                        <div>
+                            <label class="form-label" for="backdrop">
+                                <?php echo __('Upload a new backdrop'); ?>:
+                            </label>
+                            <input type="file" class="form-control" name="backdrop[]" size="30" value="" id="backdrop"/><br />
+
+                        </div>
                         <font class="error">
                             <?php echo $errors['backdrop']; ?>
                         </font>
@@ -323,10 +326,10 @@ $pages = Page::getPages();
         </table>
     </div>
 
-    <p style="text-align:center;">
-        <input class="button" type="submit" name="submit-button" value="<?php
+    <p class="text-center">
+        <input class="btn orange-button small-margin-top" type="submit" name="submit-button" value="<?php
         echo __('Save Changes'); ?>">
-        <input class="button" type="reset" name="reset" value="<?php
+        <input class="btn btn-outline-warning small-margin-top" type="reset" name="reset" value="<?php
         echo __('Reset Changes'); ?>">
     </p>
 </form>
