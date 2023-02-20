@@ -3857,3 +3857,8 @@ td select,
 .small-margin-left {
     margin-left: 10px;
 }
+
+select[name="default_timezone"] {
+    height: auto;
+    margin-bottom: 10px;
+}
